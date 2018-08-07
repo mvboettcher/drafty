@@ -1,3 +1,11 @@
+require('dotenv').config()
+const PouchDB = require('pouchdb-core')
+PouchDB.plugin(require('pouchdb-adapter-http'))
+
+const db = new PouchDB(
+  `${process.env.COUCH_HOSTNAME}${process.env.COUCH_DBNAME}`
+)
+
 const breweries = [
   {
     _id: 'brewery_revelry',
@@ -21,10 +29,7 @@ const breweries = [
       latitude: 32.807076
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -50,11 +55,7 @@ const breweries = [
       latitude: 32.846691
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
-    }
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
   },
 
   {
@@ -79,10 +80,7 @@ const breweries = [
       latitude: 32.873618
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -108,10 +106,7 @@ const breweries = [
       latitude: 32.839756
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -137,10 +132,7 @@ const breweries = [
       latitude: 32.84214
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -166,10 +158,7 @@ const breweries = [
       latitude: 32.815921
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -195,10 +184,7 @@ const breweries = [
       latitude: 32.781634
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -224,10 +210,7 @@ const breweries = [
       latitude: 32.801211
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -253,10 +236,7 @@ const breweries = [
       latitude: 32.833928
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -282,10 +262,7 @@ const breweries = [
       latitude: 32.8177
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -311,10 +288,7 @@ const breweries = [
       latitude: 32.853413
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -340,10 +314,7 @@ const breweries = [
       latitude: 32.816561
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -369,10 +340,7 @@ const breweries = [
       latitude: 32.81812
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -398,10 +366,7 @@ const breweries = [
       latitude: 32.822204
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -427,10 +392,7 @@ const breweries = [
       latitude: 32.882375
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -456,10 +418,7 @@ const breweries = [
       latitude: 32.867728
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -485,10 +444,7 @@ const breweries = [
       latitude: 32.925511
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -514,10 +470,7 @@ const breweries = [
       latitude: 32.851689
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -543,10 +496,7 @@ const breweries = [
       latitude: 32.835569
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -572,10 +522,7 @@ const breweries = [
       latitude: 32.802884
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -601,10 +548,16 @@ const breweries = [
       latitude: 32.741197
     },
     coupons: {
-      buy1Get1: '',
-      halfPitcher: '',
-      dollarOff: '',
-      freeSlice: ''
+        coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   }
 ]
+
+db.bulkDocs(breweries, function(err, result) {
+  if (err) {
+    console.log('ERROR', JSON.stringify(err))
+    return
+  }
+
+  console.log('SUCCESS!', JSON.stringify(result, null, 2))
+})
