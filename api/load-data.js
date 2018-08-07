@@ -55,7 +55,8 @@ const breweries = [
       latitude: 32.846691
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
+    }
   },
 
   {
@@ -80,7 +81,7 @@ const breweries = [
       latitude: 32.873618
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -106,7 +107,7 @@ const breweries = [
       latitude: 32.839756
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -132,7 +133,7 @@ const breweries = [
       latitude: 32.84214
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -158,7 +159,7 @@ const breweries = [
       latitude: 32.815921
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -184,7 +185,7 @@ const breweries = [
       latitude: 32.781634
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -210,7 +211,7 @@ const breweries = [
       latitude: 32.801211
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -236,7 +237,7 @@ const breweries = [
       latitude: 32.833928
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -262,7 +263,7 @@ const breweries = [
       latitude: 32.8177
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -288,7 +289,7 @@ const breweries = [
       latitude: 32.853413
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -314,7 +315,7 @@ const breweries = [
       latitude: 32.816561
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -340,7 +341,7 @@ const breweries = [
       latitude: 32.81812
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -366,7 +367,7 @@ const breweries = [
       latitude: 32.822204
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -392,7 +393,7 @@ const breweries = [
       latitude: 32.882375
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -418,7 +419,7 @@ const breweries = [
       latitude: 32.867728
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -444,7 +445,7 @@ const breweries = [
       latitude: 32.925511
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -470,7 +471,7 @@ const breweries = [
       latitude: 32.851689
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -496,7 +497,7 @@ const breweries = [
       latitude: 32.835569
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -522,7 +523,7 @@ const breweries = [
       latitude: 32.802884
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -548,7 +549,7 @@ const breweries = [
       latitude: 32.741197
     },
     coupons: {
-        coupon_1: 'Buy One, Get One FREE Draft Pint'
+      coupon_1: 'Buy One, Get One FREE Draft Pint'
     }
   }
 ]
