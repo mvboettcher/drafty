@@ -15,13 +15,13 @@ const breweries = [
     rating: 4.7,
     website: 'https://www.revelrybrewingco.com/',
     hours: {
-      Monday: '4–10PM',
-      Tuesday: '4–10PM',
-      Wednesday: '4–10PM',
-      Thursday: '4–10PM',
-      Friday: '12PM–12AM',
-      Saturday: '12PM–12AM',
-      Sunday: '12–10PM'
+      mon: '4–10PM',
+      tues: '4–10PM',
+      wed: '4–10PM',
+      thu: '4–10PM',
+      fri: '12PM–12AM',
+      sat: '12PM–12AM',
+      sun: '12–10PM'
     },
     location: {
       address: '10 Conroy St, Charleston, SC 29403',
@@ -29,7 +29,7 @@ const breweries = [
       latitude: 32.807076
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -41,13 +41,13 @@ const breweries = [
     rating: 4.5,
     website: 'http://www.westbrookbrewing.com',
     hours: {
-      Monday: 'Closed',
-      Tuesday: '4–8PM',
-      Wednesday: '4–8PM',
-      Thursday: '4–8PM',
-      Friday: '4-8PM',
-      Saturday: '12-6PM',
-      Sunday: 'Closed'
+      mon: 'Closed',
+      tues: '4–8PM',
+      wed: '4–8PM',
+      thu: '4–8PM',
+      fri: '4-8PM',
+      sat: '12-6PM',
+      sun: 'Closed'
     },
     location: {
       address: '510 Ridge Rd, Mt Pleasant, SC 29464',
@@ -55,7 +55,7 @@ const breweries = [
       latitude: 32.846691
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -67,13 +67,13 @@ const breweries = [
     rating: 4.7,
     website: 'https://www.coastbrewing.com/',
     hours: {
-      Monday: 'Closed',
-      Tuesday: 'Closed',
-      Wednesday: 'Closed',
-      Thursday: '4–7PM',
-      Friday: '4-7PM',
-      Saturday: '12–5PM',
-      Sunday: 'Closed'
+      mon: 'Closed',
+      tues: 'Closed',
+      wed: 'Closed',
+      thu: '4–7PM',
+      fri: '4-7PM',
+      sat: '12–5PM',
+      sun: 'Closed'
     },
     location: {
       address: '1250 2nd St N, North Charleston, SC 29405',
@@ -81,7 +81,7 @@ const breweries = [
       latitude: 32.873618
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -93,13 +93,13 @@ const breweries = [
     rating: 4.8,
     website: 'http://www.twoblokesbrewing.com',
     hours: {
-      Monday: '4–9PM',
-      Tuesday: '4–9PM',
-      Wednesday: '4–9PM',
-      Thursday: '3–9PM',
-      Friday: '2–10PM',
-      Saturday: '12–10PM',
-      Sunday: '12–8PM'
+      mon: '4–9PM',
+      tues: '4–9PM',
+      wed: '4–9PM',
+      thu: '3–9PM',
+      fri: '2–10PM',
+      sat: '12–10PM',
+      sun: '12–8PM'
     },
     location: {
       address: '547 Long Point Rd #101, Mt Pleasant, SC 29464',
@@ -107,7 +107,7 @@ const breweries = [
       latitude: 32.839756
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -119,13 +119,13 @@ const breweries = [
     rating: 4.6,
     website: 'http://www.freehousebeer.com',
     hours: {
-      Monday: 'Closed',
-      Tuesday: '3-8PM',
-      Wednesday: '3-8PM',
-      Thursday: '3-8PM',
-      Friday: '3-8PM',
-      Saturday: '1–8PM',
-      Sunday: 'Closed'
+      mon: 'Closed',
+      tues: '3-8PM',
+      wed: '3-8PM',
+      thu: '3-8PM',
+      fri: '3-8PM',
+      sat: '1–8PM',
+      sun: 'Closed'
     },
     location: {
       address: '2895 Pringle St B, North Charleston, SC 29405',
@@ -133,7 +133,7 @@ const breweries = [
       latitude: 32.84214
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -145,13 +145,13 @@ const breweries = [
     rating: 4.8,
     website: 'http://www.cooperriverbrewing.com/',
     hours: {
-      Monday: 'Closed',
-      Tuesday: 'Closed',
-      Wednesday: '5-9PM',
-      Thursday: '4–10PM',
-      Friday: '4-10PM',
-      Saturday: '2-10PM',
-      Sunday: '1-7PM'
+      mon: 'Closed',
+      tues: 'Closed',
+      wed: '5-9PM',
+      thu: '4–10PM',
+      fri: '4-10PM',
+      sat: '2-10PM',
+      sun: '1-7PM'
     },
     location: {
       address: '2201 Mechanic St B, Charleston, SC 29405',
@@ -159,7 +159,7 @@ const breweries = [
       latitude: 32.815921
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -171,13 +171,13 @@ const breweries = [
     rating: 4.7,
     website: 'https://www.chsfermentory.com/',
     hours: {
-      Monday: '4–11PM',
-      Tuesday: '4–11PM',
-      Wednesday: '4–11PM',
-      Thursday: '4–11PM',
-      Friday: '2-12AM',
-      Saturday: '12PM–12AM',
-      Sunday: '11AM–10PM'
+      mon: '4–11PM',
+      tues: '4–11PM',
+      wed: '4–11PM',
+      thu: '4–11PM',
+      fri: '2-12AM',
+      sat: '12PM–12AM',
+      sun: '11AM–10PM'
     },
     location: {
       address: '809 Savannah Hwy, Charleston, SC 29407',
@@ -185,7 +185,7 @@ const breweries = [
       latitude: 32.781634
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -197,13 +197,13 @@ const breweries = [
     rating: 4.5,
     website: 'http://www.palmettobrewery.com',
     hours: {
-      Monday: 'Closed',
-      Tuesday: '4–10PM',
-      Wednesday: '4–10PM',
-      Thursday: '4–10PM',
-      Friday: '12–10PM',
-      Saturday: '12–10PM',
-      Sunday: '12–8PM'
+      mon: 'Closed',
+      tues: '4–10PM',
+      wed: '4–10PM',
+      thu: '4–10PM',
+      fri: '12–10PM',
+      sat: '12–10PM',
+      sun: '12–8PM'
     },
     location: {
       address: '289 Huger St, Charleston, SC 29403',
@@ -211,7 +211,7 @@ const breweries = [
       latitude: 32.801211
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -223,13 +223,13 @@ const breweries = [
     rating: 5.0,
     website: 'http://www.lofibrewing.com',
     hours: {
-      Monday: 'Closed',
-      Tuesday: 'Closed',
-      Wednesday: 'Closed',
-      Thursday: '4–9PM',
-      Friday: '4-9PM',
-      Saturday: '2-9PM',
-      Sunday: '2-6PM'
+      mon: 'Closed',
+      tues: 'Closed',
+      wed: 'Closed',
+      thu: '4–9PM',
+      fri: '4-9PM',
+      sat: '2-9PM',
+      sun: '2-6PM'
     },
     location: {
       address: '2038 Meeting Street Rd, Charleston, SC 29405',
@@ -237,7 +237,7 @@ const breweries = [
       latitude: 32.833928
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -249,13 +249,13 @@ const breweries = [
     rating: 4.7,
     website: 'http://www.edmundsoast.com/brewing-co',
     hours: {
-      Monday: '11AM-10PM',
-      Tuesday: '11AM-10PM',
-      Wednesday: '11AM-10PM',
-      Thursday: '11AM-10PM',
-      Friday: '11AM-10PM',
-      Saturday: '11AM-10PM',
-      Sunday: '11AM-10PM'
+      mon: '11AM-10PM',
+      tues: '11AM-10PM',
+      wed: '11AM-10PM',
+      thu: '11AM-10PM',
+      fri: '11AM-10PM',
+      sat: '11AM-10PM',
+      sun: '11AM-10PM'
     },
     location: {
       address: '1505 King St #115, Charleston, SC 29405',
@@ -263,7 +263,7 @@ const breweries = [
       latitude: 32.8177
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -275,13 +275,13 @@ const breweries = [
     rating: 4.6,
     website: 'https://holycitybrewing.com/',
     hours: {
-      Monday: '11–8PM',
-      Tuesday: '11–8PM',
-      Wednesday: '11–8PM',
-      Thursday: '11–8PM',
-      Friday: '11–9PM',
-      Saturday: '11–9PM',
-      Sunday: '11–6PM'
+      mon: '11–8PM',
+      tues: '11–8PM',
+      wed: '11–8PM',
+      thu: '11–8PM',
+      fri: '11–9PM',
+      sat: '11–9PM',
+      sun: '11–6PM'
     },
     location: {
       address: '4155 Dorchester Rd, Charleston, SC 29405',
@@ -289,7 +289,7 @@ const breweries = [
       latitude: 32.853413
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -301,13 +301,13 @@ const breweries = [
     rating: 4.5,
     website: 'https://www.fattysbeerworks.com/',
     hours: {
-      Monday: '4–9PM',
-      Tuesday: '4–9PM',
-      Wednesday: '4–9PM',
-      Thursday: '4–9PM',
-      Friday: '4–10PM',
-      Saturday: '12–10PM',
-      Sunday: '2-9PM'
+      mon: '4–9PM',
+      tues: '4–9PM',
+      wed: '4–9PM',
+      thu: '4–9PM',
+      fri: '4–10PM',
+      sat: '12–10PM',
+      sun: '2-9PM'
     },
     location: {
       address: '1436 Meeting St, Charleston, SC 29405',
@@ -315,7 +315,7 @@ const breweries = [
       latitude: 32.816561
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -327,13 +327,13 @@ const breweries = [
     rating: 4.8,
     website: 'https://www.munklebrewing.com/',
     hours: {
-      Monday: 'Closed',
-      Tuesday: '4–9PM',
-      Wednesday: '4–9PM',
-      Thursday: '4-9PM',
-      Friday: '2-10PM',
-      Saturday: '1-10PM',
-      Sunday: '12–7PM'
+      mon: 'Closed',
+      tues: '4–9PM',
+      wed: '4–9PM',
+      thu: '4-9PM',
+      fri: '2-10PM',
+      sat: '1-10PM',
+      sun: '12–7PM'
     },
     location: {
       address: '1513 Meeting Street Rd, Charleston, SC 29405',
@@ -341,7 +341,7 @@ const breweries = [
       latitude: 32.81812
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -353,13 +353,13 @@ const breweries = [
     rating: 4.8,
     website: 'http://www.tradesmanbrewing.com/',
     hours: {
-      Monday: '12–6PM',
-      Tuesday: '12-8PM',
-      Wednesday: '12–8PM',
-      Thursday: '12–8PM',
-      Friday: '12–10PM',
-      Saturday: '12–10PM',
-      Sunday: '12–6PM'
+      mon: '12–6PM',
+      tues: '12-8PM',
+      wed: '12–8PM',
+      thu: '12–8PM',
+      fri: '12–10PM',
+      sat: '12–10PM',
+      sun: '12–6PM'
     },
     location: {
       address: '1647 King St Ext, Charleston, SC 29405',
@@ -367,7 +367,7 @@ const breweries = [
       latitude: 32.822204
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -379,13 +379,13 @@ const breweries = [
     rating: 4.7,
     website: 'http://www.commonhousealeworks.com/',
     hours: {
-      Monday: 'Closed',
-      Tuesday: '4–9PM',
-      Wednesday: '4–9PM',
-      Thursday: '4–9PM',
-      Friday: '12–10PM',
-      Saturday: '12–10PM',
-      Sunday: '12–6PM'
+      mon: 'Closed',
+      tues: '4–9PM',
+      wed: '4–9PM',
+      thu: '4–9PM',
+      fri: '12–10PM',
+      sat: '12–10PM',
+      sun: '12–6PM'
     },
     location: {
       address: "4831 O'Hear Ave, North Charleston, SC 29405",
@@ -393,7 +393,7 @@ const breweries = [
       latitude: 32.882375
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -405,13 +405,13 @@ const breweries = [
     rating: 4.7,
     website: 'http://www.rustybullbrewing.com/',
     hours: {
-      Monday: '11AM-11PM',
-      Tuesday: '11AM-11PM',
-      Wednesday: '11AM-11PM',
-      Thursday: '11AM-11PM',
-      Friday: '11AM-11PM',
-      Saturday: '11AM-11PM',
-      Sunday: '1-9PM'
+      mon: '11AM-11PM',
+      tues: '11AM-11PM',
+      wed: '11AM-11PM',
+      thu: '11AM-11PM',
+      fri: '11AM-11PM',
+      sat: '11AM-11PM',
+      sun: '1-9PM'
     },
     location: {
       address: '3005 W Montague Ave Suite 110, North Charleston, SC 29418',
@@ -419,7 +419,7 @@ const breweries = [
       latitude: 32.867728
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -431,13 +431,13 @@ const breweries = [
     rating: 4.8,
     website: 'http://snafubrewingcompany.com/',
     hours: {
-      Monday: 'Closed',
-      Tuesday: '3–7PM',
-      Wednesday: '3–10PM',
-      Thursday: '3–10PM',
-      Friday: '3–10PM',
-      Saturday: '2–10PM',
-      Sunday: 'Closed'
+      mon: 'Closed',
+      tues: '3–7PM',
+      wed: '3–10PM',
+      thu: '3–10PM',
+      fri: '3–10PM',
+      sat: '2–10PM',
+      sun: 'Closed'
     },
     location: {
       address: '3280 Industry Dr, North Charleston, SC 29418',
@@ -445,7 +445,7 @@ const breweries = [
       latitude: 32.925511
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -457,13 +457,13 @@ const breweries = [
     rating: 5.0,
     website: 'Not available',
     hours: {
-      Monday: 'Closed',
-      Tuesday: 'Closed',
-      Wednesday: '2-8PM',
-      Thursday: '2-8PM',
-      Friday: '12-8PM',
-      Saturday: '12-8PM',
-      Sunday: '12–6PM'
+      mon: 'Closed',
+      tues: 'Closed',
+      wed: '2-8PM',
+      thu: '2-8PM',
+      fri: '12-8PM',
+      sat: '12-8PM',
+      sun: '12–6PM'
     },
     location: {
       address: '2668 Industrial Ave, North Charleston, SC 29405',
@@ -471,7 +471,7 @@ const breweries = [
       latitude: 32.851689
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -483,13 +483,13 @@ const breweries = [
     rating: 4.8,
     website: 'http://ghostmonkeybrewery.com/',
     hours: {
-      Monday: 'Closed',
-      Tuesday: 'Closed',
-      Wednesday: '4–9PM',
-      Thursday: '4–9PM',
-      Friday: '4-10PM',
-      Saturday: '11AM-10PM',
-      Sunday: '12–6PM'
+      mon: 'Closed',
+      tues: 'Closed',
+      wed: '4–9PM',
+      thu: '4–9PM',
+      fri: '4-10PM',
+      sat: '11AM-10PM',
+      sun: '12–6PM'
     },
     location: {
       address: '522 Wando Ln, Mt Pleasant, SC 29464',
@@ -497,7 +497,7 @@ const breweries = [
       latitude: 32.835569
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -509,13 +509,13 @@ const breweries = [
     rating: 4.9,
     website: 'http://www.fatpigbrewing.com/',
     hours: {
-      Monday: 'Closed',
-      Tuesday: 'Closed',
-      Wednesday: 'Closed',
-      Thursday: '4–10PM',
-      Friday: '4-10PM',
-      Saturday: '12-10PM',
-      Sunday: 'Closed'
+      mon: 'Closed',
+      tues: 'Closed',
+      wed: 'Closed',
+      thu: '4–10PM',
+      fri: '4-10PM',
+      sat: '12-10PM',
+      sun: 'Closed'
     },
     location: {
       address: '3690 State Rd S-10-1024, Johns Island, SC 29455',
@@ -523,7 +523,7 @@ const breweries = [
       latitude: 32.802884
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   },
 
@@ -535,13 +535,13 @@ const breweries = [
     rating: 4.8,
     website: 'http://www.lowtidebrewing.com/',
     hours: {
-      Monday: '3–10PM',
-      Tuesday: '3–10PM',
-      Wednesday: '3–10PM',
-      Thursday: '3–10PM',
-      Friday: '12PM–12AM',
-      Saturday: '12PM–12AM',
-      Sunday: '12–10PM'
+      mon: '3–10PM',
+      tues: '3–10PM',
+      wed: '3–10PM',
+      thu: '3–10PM',
+      fri: '12PM–12AM',
+      sat: '12PM–12AM',
+      sun: '12–10PM'
     },
     location: {
       address: '4808, 2863 Maybank Hwy, Johns Island, SC 29455',
@@ -549,7 +549,32 @@ const breweries = [
       latitude: 32.741197
     },
     coupons: {
-      coupon_1: 'Buy One, Get One FREE Draft Pint'
+      cpn1: 'Buy One, Get One FREE Draft Pint'
+    }
+  },
+  {
+    _id: 'brewery_frothy-beard',
+    type: 'brewery',
+    name: 'Frothy Beard Brewing Co.',
+    phone: '(843) 872-4201',
+    rating: 4.5,
+    website: 'http://www.frothybeard.com/',
+    hours: {
+      mon: '11AM–10PM',
+      tues: '11AM–10PM',
+      wed: '11AM–10PM',
+      thu: '11AM–10PM',
+      fri: '11AM–11PM',
+      sat: '11AM–11PM',
+      sun: '11AM–10PM'
+    },
+    location: {
+      address: '1401 Sam Rittenberg Blvd, Charleston, SC 29407',
+      longitude: -79.996588,
+      latitude: 32.813618
+    },
+    coupons: {
+      cpn1: 'Buy One, Get One FREE Draft Pint'
     }
   }
 ]
