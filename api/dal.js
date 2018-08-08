@@ -50,9 +50,14 @@ const postBrewery = brewery => {
 
 const deleteBrewery = brewery => db.remove(brewery)
 
+const putBrewery = brewery => {
+  return db.put(brewery)
+}
+
 module.exports = {
   getBreweries,
   getBrewery,
   postBrewery,
-  deleteBrewery
+  deleteBrewery,
+  putBrewery
 }

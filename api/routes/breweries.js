@@ -3,8 +3,8 @@ const {
   getBreweries,
   getBrewery,
   postBrewery,
-  deleteBrewery
-  //   putBrewery,
+  deleteBrewery,
+  putBrewery
 } = require('../dal')
 const bodyParser = require('body-parser')
 const { prop, propOr, isEmpty, not, concat, pathOr } = require('ramda')
@@ -41,7 +41,6 @@ const breweriesRoutes = app => {
 
   app.post('/breweries', bodyParser.json(), (req, res, next) => {
     const newBrewery = propOr({}, 'body', req)
-    // console.log(JSON.stringify(new Brewery))
     if (isEmpty(newBrewery)) {
       next(
         new NodeHTTPError(
@@ -51,7 +50,6 @@ const breweriesRoutes = app => {
       )
       return
     }
-    // console.log("new", newBrewery)
     const missingFields = checkReqFields(reqFields, newBrewery)
     const missingLocationFields = checkReqFields(
       reqLocationFields,
@@ -62,12 +60,10 @@ const breweriesRoutes = app => {
       prop('hours', newBrewery)
     )
     if (not(isEmpty(missingFields))) {
-      //console.log(missingFieldMsg(missingFields))
       next(new NodeHTTPError(400, missingFieldMsg(missingFields, 'brewery')))
       return
     }
     if (not(isEmpty(missingLocationFields))) {
-      //console.log(missingFieldMsg(missingLocationFields))
       next(
         new NodeHTTPError(
           400,
@@ -77,7 +73,6 @@ const breweriesRoutes = app => {
       return
     }
     if (not(isEmpty(missingHoursFields))) {
-      //console.log(missingFieldMsg(missingHoursFields))
       next(
         new NodeHTTPError(400, missingFieldMsg(missingFields, 'brewery hours'))
       )
@@ -85,7 +80,6 @@ const breweriesRoutes = app => {
     }
 
     const cleanBrewery = cleanObj(allowedFields, newBrewery)
-    //console.log("clean", brewery)
     postBrewery(cleanBrewery)
       .then(result => {
         console.log({
@@ -101,6 +95,43 @@ const breweriesRoutes = app => {
     deleteBrewery(brewery)
       .then(result => res.status(200).send(result))
       .catch(err => next(new NodeHTTPError(err.status, err.message, err)))
+  })
+
+  app.put('/breweries/:id', bodyParser.json(), (req, res, next) => {
+    const newBrewery = propOr({}, 'body', req)
+    // console.log(JSON.stringify(newBrewery))
+    if (isEmpty(newBrewery)) {
+      next(
+        new NodeHTTPError(
+          400,
+          'No valid JSON document was provided in the request body.'
+        )
+      )
+      return
+    }
+    // console.log("new", newBrewery)
+    const missingFields = checkReqFields(
+      concat(['_id', '_rev'], reqFields),
+      newBrewery
+    )
+    //console.log(missingFields)
+    //console.log(not(isEmpty(missingFields)))
+    if (not(isEmpty(missingFields))) {
+      //console.log(missingFieldMsg(missingFields))
+      next(new NodeHTTPError(400, missingFieldMsg(missingFields)))
+      return
+    }
+    const cleanBrewery = cleanObj(
+      concat(allowedFields, ['_id', '_rev']),
+      newBrewery
+    )
+    //console.log("clean", cleanBrewery)
+    putBrewery(cleanBrewery)
+      .then(result => {
+        console.log({ result })
+        res.status(200).send(result)
+      })
+      .catch(err => new NodeHTTPError(err.status, err.message, err))
   })
 }
 
