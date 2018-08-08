@@ -1,14 +1,11 @@
 const PouchDB = require('pouchdb-core')
 PouchDB.plugin(require('pouchdb-adapter-http'))
 const {
-  map,
-  prop,
   merge,
   split,
   not,
   isEmpty,
   filter,
-  propEq,
   propOr,
   contains
 } = require('ramda')

@@ -99,7 +99,6 @@ const breweriesRoutes = app => {
 
   app.put('/breweries/:id', bodyParser.json(), (req, res, next) => {
     const newBrewery = propOr({}, 'body', req)
-    // console.log(JSON.stringify(newBrewery))
     if (isEmpty(newBrewery)) {
       next(
         new NodeHTTPError(
@@ -109,15 +108,11 @@ const breweriesRoutes = app => {
       )
       return
     }
-    // console.log("new", newBrewery)
     const missingFields = checkReqFields(
       concat(['_id', '_rev'], reqFields),
       newBrewery
     )
-    //console.log(missingFields)
-    //console.log(not(isEmpty(missingFields)))
     if (not(isEmpty(missingFields))) {
-      //console.log(missingFieldMsg(missingFields))
       next(new NodeHTTPError(400, missingFieldMsg(missingFields)))
       return
     }
@@ -125,7 +120,6 @@ const breweriesRoutes = app => {
       concat(allowedFields, ['_id', '_rev']),
       newBrewery
     )
-    //console.log("clean", cleanBrewery)
     putBrewery(cleanBrewery)
       .then(result => {
         console.log({ result })

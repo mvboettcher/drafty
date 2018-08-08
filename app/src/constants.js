@@ -1,0 +1,1 @@
+export const SET_BREWERIES = 'SET_BREWERIES'
