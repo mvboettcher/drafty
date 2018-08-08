@@ -42,7 +42,7 @@ const getBrewery = id => db.get(id)
 const postBrewery = brewery => {
   console.log(JSON.stringify(brewery))
   const modifiedBrewery = merge(brewery, {
-    _id: pkGen('_', brewery.name),
+    _id: pkGen('brewery_', brewery.name),
     type: 'brewery'
   })
   return db.put(modifiedBrewery)

@@ -3,11 +3,11 @@ const {
   getBreweries,
   getBrewery,
   postBrewery
-  //   putResource,
-  //   deleteResource
+  //   putBrewery,
+  //   deleteBrewery
 } = require('../dal')
 const bodyParser = require('body-parser')
-const { propOr, isEmpty, not, concat, pathOr } = require('ramda')
+const { prop, propOr, isEmpty, not, concat, pathOr } = require('ramda')
 const checkReqFields = require('../lib/checkRequiredFields')
 const missingFieldMsg = require('../lib/missingFieldMsg')
 const cleanObj = require('../lib/cleanObj')
@@ -41,7 +41,7 @@ const breweriesRoutes = app => {
 
   app.post('/breweries', bodyParser.json(), (req, res, next) => {
     const newBrewery = propOr({}, 'body', req)
-    // console.log(JSON.stringify(newResource))
+    // console.log(JSON.stringify(new Brewery))
     if (isEmpty(newBrewery)) {
       next(
         new NodeHTTPError(
@@ -51,22 +51,23 @@ const breweriesRoutes = app => {
       )
       return
     }
-    // console.log("new", newResource)
+    // console.log("new", newBrewery)
     const missingFields = checkReqFields(reqFields, newBrewery)
     const missingLocationFields = checkReqFields(
       reqLocationFields,
-      newBrewery.location
+      prop('location', newBrewery)
     )
-    const missingHoursFields = checkReqFields(reqHoursFields, newBrewery.hours)
-    //console.log(missingFields)
-    //console.log(not(isEmpty(missingFields)))
+    const missingHoursFields = checkReqFields(
+      reqHoursFields,
+      prop('hours', newBrewery)
+    )
     if (not(isEmpty(missingFields))) {
       //console.log(missingFieldMsg(missingFields))
       next(new NodeHTTPError(400, missingFieldMsg(missingFields, 'brewery')))
       return
     }
     if (not(isEmpty(missingLocationFields))) {
-      //console.log(missingFieldMsg(missingFields))
+      //console.log(missingFieldMsg(missingLocationFields))
       next(
         new NodeHTTPError(
           400,
@@ -76,66 +77,22 @@ const breweriesRoutes = app => {
       return
     }
     if (not(isEmpty(missingHoursFields))) {
-      //console.log(missingFieldMsg(missingFields))
+      //console.log(missingFieldMsg(missingHoursFields))
       next(
         new NodeHTTPError(400, missingFieldMsg(missingFields, 'brewery hours'))
       )
       return
     }
 
-    const cleanResource = cleanObj(allowedFields, newBrewery)
-    //console.log("clean", cleanResource)
-    postBrewery(cleanResource)
+    const cleanBrewery = cleanObj(allowedFields, newBrewery)
+    //console.log("clean", brewery)
+    postBrewery(cleanBrewery)
       .then(result => {
         console.log({ result })
         res.status(201).send(result)
       })
       .catch(err => new NodeHTTPError(err.status, err.message, err))
   })
-
-  // app.put("/resources/:id", bodyParser.json(), (req, res, next) => {
-  //     const newResource = propOr({}, "body", req)
-  //     // console.log(JSON.stringify(newResource))
-  //     if (isEmpty(newResource)) {
-  //         next(
-  //             new NodeHTTPError(
-  //                 400,
-  //                 "No valid JSON document was provided in the request body."
-  //             )
-  //         )
-  //         return
-  //     }
-  //     // console.log("new", newResource)
-  //     const missingFields = checkReqFields(
-  //         concat(["_id", "_rev"], reqFields),
-  //         newResource
-  //     )
-  //     //console.log(missingFields)
-  //     //console.log(not(isEmpty(missingFields)))
-  //     if (not(isEmpty(missingFields))) {
-  //         //console.log(missingFieldMsg(missingFields))
-  //         next(new NodeHTTPError(400, missingFieldMsg(missingFields)))
-  //         return
-  //     }
-  //     const cleanResource = cleanObj(
-  //         concat(allowedFields, ["_id", "_rev"]),
-  //         newResource
-  //     )
-  //     //console.log("clean", cleanResource)
-  //     putResource(cleanResource)
-  //         .then(result => {
-  //             console.log({ result })
-  //             res.status(200).send(result)
-  //         })
-  //         .catch(err => new NodeHTTPError(err.status, err.message, err))
-  // })
-
-  // app.delete("/resources/:id", bodyParser.json(), (req, res, next) => {
-  //     const resource = propOr({}, "body", req)
-  //     deleteResource(resource)
-  //         .then(result => res.status(200).send(result))
-  //         .catch(err => next(new NodeHTTPError(err.status, err.message, err)))
-  // })
 }
 
 module.exports = breweriesRoutes
