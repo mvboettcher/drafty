@@ -2,9 +2,9 @@ const NodeHTTPError = require('node-http-error')
 const {
   getBreweries,
   getBrewery,
-  postBrewery
+  postBrewery,
+  deleteBrewery
   //   putBrewery,
-  //   deleteBrewery
 } = require('../dal')
 const bodyParser = require('body-parser')
 const { prop, propOr, isEmpty, not, concat, pathOr } = require('ramda')
@@ -88,10 +88,19 @@ const breweriesRoutes = app => {
     //console.log("clean", brewery)
     postBrewery(cleanBrewery)
       .then(result => {
-        console.log({ result })
+        console.log({
+          result
+        })
         res.status(201).send(result)
       })
       .catch(err => new NodeHTTPError(err.status, err.message, err))
+  })
+
+  app.delete('/breweries/:id', bodyParser.json(), (req, res, next) => {
+    const brewery = propOr({}, 'body', req)
+    deleteBrewery(brewery)
+      .then(result => res.status(200).send(result))
+      .catch(err => next(new NodeHTTPError(err.status, err.message, err)))
   })
 }
 

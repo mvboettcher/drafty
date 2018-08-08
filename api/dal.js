@@ -48,8 +48,11 @@ const postBrewery = brewery => {
   return db.put(modifiedBrewery)
 }
 
+const deleteBrewery = brewery => db.remove(brewery)
+
 module.exports = {
   getBreweries,
   getBrewery,
-  postBrewery
+  postBrewery,
+  deleteBrewery
 }
