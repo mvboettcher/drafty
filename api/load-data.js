@@ -16,7 +16,7 @@ const breweries = [
     website: 'https://www.revelrybrewingco.com/',
     hours: {
       mon: '4–10PM',
-      tues: '4–10PM',
+      tue: '4–10PM',
       wed: '4–10PM',
       thu: '4–10PM',
       fri: '12PM–12AM',
@@ -42,7 +42,7 @@ const breweries = [
     website: 'http://www.westbrookbrewing.com',
     hours: {
       mon: 'Closed',
-      tues: '4–8PM',
+      tue: '4–8PM',
       wed: '4–8PM',
       thu: '4–8PM',
       fri: '4-8PM',
@@ -68,7 +68,7 @@ const breweries = [
     website: 'https://www.coastbrewing.com/',
     hours: {
       mon: 'Closed',
-      tues: 'Closed',
+      tue: 'Closed',
       wed: 'Closed',
       thu: '4–7PM',
       fri: '4-7PM',
@@ -94,7 +94,7 @@ const breweries = [
     website: 'http://www.twoblokesbrewing.com',
     hours: {
       mon: '4–9PM',
-      tues: '4–9PM',
+      tue: '4–9PM',
       wed: '4–9PM',
       thu: '3–9PM',
       fri: '2–10PM',
@@ -120,7 +120,7 @@ const breweries = [
     website: 'http://www.freehousebeer.com',
     hours: {
       mon: 'Closed',
-      tues: '3-8PM',
+      tue: '3-8PM',
       wed: '3-8PM',
       thu: '3-8PM',
       fri: '3-8PM',
@@ -146,7 +146,7 @@ const breweries = [
     website: 'http://www.cooperriverbrewing.com/',
     hours: {
       mon: 'Closed',
-      tues: 'Closed',
+      tue: 'Closed',
       wed: '5-9PM',
       thu: '4–10PM',
       fri: '4-10PM',
@@ -172,7 +172,7 @@ const breweries = [
     website: 'https://www.chsfermentory.com/',
     hours: {
       mon: '4–11PM',
-      tues: '4–11PM',
+      tue: '4–11PM',
       wed: '4–11PM',
       thu: '4–11PM',
       fri: '2-12AM',
@@ -198,7 +198,7 @@ const breweries = [
     website: 'http://www.palmettobrewery.com',
     hours: {
       mon: 'Closed',
-      tues: '4–10PM',
+      tue: '4–10PM',
       wed: '4–10PM',
       thu: '4–10PM',
       fri: '12–10PM',
@@ -224,7 +224,7 @@ const breweries = [
     website: 'http://www.lofibrewing.com',
     hours: {
       mon: 'Closed',
-      tues: 'Closed',
+      tue: 'Closed',
       wed: 'Closed',
       thu: '4–9PM',
       fri: '4-9PM',
@@ -250,7 +250,7 @@ const breweries = [
     website: 'http://www.edmundsoast.com/brewing-co',
     hours: {
       mon: '11AM-10PM',
-      tues: '11AM-10PM',
+      tue: '11AM-10PM',
       wed: '11AM-10PM',
       thu: '11AM-10PM',
       fri: '11AM-10PM',
@@ -276,7 +276,7 @@ const breweries = [
     website: 'https://holycitybrewing.com/',
     hours: {
       mon: '11–8PM',
-      tues: '11–8PM',
+      tue: '11–8PM',
       wed: '11–8PM',
       thu: '11–8PM',
       fri: '11–9PM',
@@ -302,7 +302,7 @@ const breweries = [
     website: 'https://www.fattysbeerworks.com/',
     hours: {
       mon: '4–9PM',
-      tues: '4–9PM',
+      tue: '4–9PM',
       wed: '4–9PM',
       thu: '4–9PM',
       fri: '4–10PM',
@@ -328,7 +328,7 @@ const breweries = [
     website: 'https://www.munklebrewing.com/',
     hours: {
       mon: 'Closed',
-      tues: '4–9PM',
+      tue: '4–9PM',
       wed: '4–9PM',
       thu: '4-9PM',
       fri: '2-10PM',
@@ -354,7 +354,7 @@ const breweries = [
     website: 'http://www.tradesmanbrewing.com/',
     hours: {
       mon: '12–6PM',
-      tues: '12-8PM',
+      tue: '12-8PM',
       wed: '12–8PM',
       thu: '12–8PM',
       fri: '12–10PM',
@@ -380,7 +380,7 @@ const breweries = [
     website: 'http://www.commonhousealeworks.com/',
     hours: {
       mon: 'Closed',
-      tues: '4–9PM',
+      tue: '4–9PM',
       wed: '4–9PM',
       thu: '4–9PM',
       fri: '12–10PM',
@@ -406,7 +406,7 @@ const breweries = [
     website: 'http://www.rustybullbrewing.com/',
     hours: {
       mon: '11AM-11PM',
-      tues: '11AM-11PM',
+      tue: '11AM-11PM',
       wed: '11AM-11PM',
       thu: '11AM-11PM',
       fri: '11AM-11PM',
@@ -432,7 +432,7 @@ const breweries = [
     website: 'http://snafubrewingcompany.com/',
     hours: {
       mon: 'Closed',
-      tues: '3–7PM',
+      tue: '3–7PM',
       wed: '3–10PM',
       thu: '3–10PM',
       fri: '3–10PM',
@@ -458,7 +458,7 @@ const breweries = [
     website: 'Not available',
     hours: {
       mon: 'Closed',
-      tues: 'Closed',
+      tue: 'Closed',
       wed: '2-8PM',
       thu: '2-8PM',
       fri: '12-8PM',
@@ -484,7 +484,7 @@ const breweries = [
     website: 'http://ghostmonkeybrewery.com/',
     hours: {
       mon: 'Closed',
-      tues: 'Closed',
+      tue: 'Closed',
       wed: '4–9PM',
       thu: '4–9PM',
       fri: '4-10PM',
@@ -510,7 +510,7 @@ const breweries = [
     website: 'http://www.fatpigbrewing.com/',
     hours: {
       mon: 'Closed',
-      tues: 'Closed',
+      tue: 'Closed',
       wed: 'Closed',
       thu: '4–10PM',
       fri: '4-10PM',
@@ -536,7 +536,7 @@ const breweries = [
     website: 'http://www.lowtidebrewing.com/',
     hours: {
       mon: '3–10PM',
-      tues: '3–10PM',
+      tue: '3–10PM',
       wed: '3–10PM',
       thu: '3–10PM',
       fri: '12PM–12AM',
@@ -561,7 +561,7 @@ const breweries = [
     website: 'http://www.frothybeard.com/',
     hours: {
       mon: '11AM–10PM',
-      tues: '11AM–10PM',
+      tue: '11AM–10PM',
       wed: '11AM–10PM',
       thu: '11AM–10PM',
       fri: '11AM–11PM',

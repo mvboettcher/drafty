@@ -7,7 +7,7 @@ import PlaceIcon from '@material-ui/icons/PlaceSharp'
 
 const li = brewery => {
   return (
-    <Link to="/breweries/:id" className="router-link">
+    <Link to={`/search-results/${brewery._id}`} className="router-link">
       <ListItem button>
         <PlaceIcon />
         <ListItemText
