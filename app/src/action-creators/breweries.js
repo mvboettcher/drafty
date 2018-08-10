@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-fetch'
 import { SET_BREWERIES } from '../constants'
-const url = process.env.REACT_APP_BASE_URL + '/breweries'
+
+const url = 'http://localhost:5000/breweries'
 
 export const setBreweries = async (dispatch, getState) => {
   const breweries = await fetch(url)

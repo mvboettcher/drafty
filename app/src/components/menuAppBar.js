@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button'
 import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/core/styles'
 import { DRAWER_TOGGLED } from '../constants'
+import { withRouter } from 'react-router'
 
 const styles = theme => ({
   root: {
@@ -71,4 +72,4 @@ const connector = connect(
   mapActionsToProps
 )
 
-export default connector(withStyles(styles)(MenuAppBar))
+export default connector(withRouter(withStyles(styles)(MenuAppBar)))

@@ -5,6 +5,7 @@ import App from './App'
 import 'typeface-roboto'
 import store from './store'
 import { Provider } from 'react-redux'
+import { setBreweries } from './action-creators/breweries'
 
 ReactDOM.render(
   <Provider store={store}>
@@ -13,3 +14,5 @@ ReactDOM.render(
 
   document.getElementById('root')
 )
+
+store.dispatch(setBreweries)
