@@ -1,12 +1,14 @@
-// import { createStore, combineReducers, applyMiddleware } from 'redux'
-// import { breweries } from './reducers/breweries'
-// import thunk from 'redux-thunk'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { breweries } from './reducers/breweries'
+import { drawer } from './reducers/drawer'
+import thunk from 'redux-thunk'
 
-// const store = createStore(
-//   combineReducers({
-//     breweries
-//   }),
-//   applyMiddleware(thunk)
-// )
+const store = createStore(
+  combineReducers({
+    drawer,
+    breweries
+  }),
+  applyMiddleware(thunk)
+)
 
-// export default store
+export default store

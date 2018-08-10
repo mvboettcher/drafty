@@ -1,1 +1,3 @@
 export const SET_BREWERIES = 'SET_BREWERIES'
+
+export const DRAWER_TOGGLED = 'DRAWER_TOGGLED'
