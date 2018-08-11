@@ -5,7 +5,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import HomeIcon from '@material-ui/icons/HomeSharp'
 import ExploreIcon from '@material-ui/icons/ExploreSharp'
-import ThumbUpIcon from '@material-ui/icons/ThumbUpSharp'
+import FavoriteIcon from '@material-ui/icons/FavoriteSharp'
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWalletSharp'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
@@ -17,7 +17,7 @@ const MenuListItems = (
   <div>
     <div className="flex">
       <Typography className="menu-title" variant="display1">
-        On Tap
+        Menu
       </Typography>
       <img className="menu-tap" src="/beer-tap_icon.png" />
     </div>
@@ -41,21 +41,21 @@ const MenuListItems = (
       </ListItem>
     </Link>
 
-    <Link to="/favorites" className="router-link">
-      <ListItem button>
-        <ListItemIcon>
-          <ThumbUpIcon />
-        </ListItemIcon>
-        <ListItemText primary="Favorites" />
-      </ListItem>
-    </Link>
-
     <Link to="/coupon-wallet" className="router-link">
       <ListItem button>
         <ListItemIcon>
           <AccountBalanceWalletIcon />
         </ListItemIcon>
         <ListItemText primary="Coupon Wallet" />
+      </ListItem>
+    </Link>
+
+    <Link to="/favorites" className="router-link">
+      <ListItem button>
+        <ListItemIcon>
+          <FavoriteIcon color="error" />
+        </ListItemIcon>
+        <ListItemText primary="Favorites" />
       </ListItem>
     </Link>
   </div>

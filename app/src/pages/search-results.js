@@ -5,7 +5,7 @@ import MenuAppBar from '../components/menuAppBar'
 import BreweryListItems from '../components/breweryListItems'
 
 const SearchResults = props => (
-  <div style={{ paddingTop: 400 }}>
+  <div style={{ paddingTop: 60 }}>
     <MenuAppBar title="Search Results" />
     <BreweryListItems />
   </div>

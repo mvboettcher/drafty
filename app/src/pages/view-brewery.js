@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getBrewery } from '../action-creators/breweries'
-import { List, ListItem } from '../../node_modules/@material-ui/core'
+import BreweryInfoCard from '../components/breweryInfoCard'
+import MenuAppBar from '../components/menuAppBar'
+import withDrawer from '../components/withDrawer'
 
 class ViewBrewery extends React.Component {
   componentDidMount() {
@@ -11,6 +13,7 @@ class ViewBrewery extends React.Component {
 
   render() {
     const props = this.props
+    const { brewery } = this.props
 
     if (props.id !== this.props.match.params.id) {
       return <h1>Loading Brewery...</h1>
@@ -18,16 +21,8 @@ class ViewBrewery extends React.Component {
 
     return (
       <div>
-        <h1>{props.name}</h1>
-        <List>
-          <ListItem>{props.sun}</ListItem>
-          <ListItem>{props.mon}</ListItem>
-          <ListItem>{props.tue}</ListItem>
-          <ListItem>{props.wed}</ListItem>
-          <ListItem>{props.thu}</ListItem>
-          <ListItem>{props.fri}</ListItem>
-          <ListItem>{props.sat}</ListItem>
-        </List>
+        <MenuAppBar />
+        <BreweryInfoCard brewery={brewery} />
       </div>
     )
   }
@@ -36,6 +31,7 @@ class ViewBrewery extends React.Component {
 const mapStateToProps = state => {
   console.log(JSON.stringify(state.brewery))
   return {
+    brewery: state.brewery,
     id: state.brewery._id,
     name: state.brewery.name,
     address: state.brewery.location.address,
@@ -65,4 +61,4 @@ const connector = connect(
   mapActionToProps
 )
 
-export default connector(ViewBrewery)
+export default connector(withDrawer(ViewBrewery))
