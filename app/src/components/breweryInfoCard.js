@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import { Link } from 'react-router-dom'
 import classnames from 'classnames'
+import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
@@ -64,15 +65,12 @@ class BreweryInfoCard extends React.Component {
     return (
       <div style={{ paddingTop: 100 }}>
         <center>
-          <Card className={classes.card}>
-            <CardHeader
-              title={brewery.name}
-              subheader={brewery.location.address}
-            />
+          <Card style={{ marginBottom: 45 }} className={classes.card}>
+            <CardHeader title={brewery.name} />
             <CardMedia
               className={classes.media}
-              image="/revelry-bar.jpg"
-              title="Contemplative Reptile"
+              image={brewery.image}
+              title="mmm...beer..."
             />
             <CardContent>
               <ListItem>
@@ -101,7 +99,7 @@ class BreweryInfoCard extends React.Component {
                 Hours:
               </Typography>
               <IconButton
-                style={{ marginRight: 160 }}
+                style={{ marginRight: 200 }}
                 className={classnames(classes.expand, {
                   [classes.expandOpen]: this.state.expanded
                 })}
@@ -117,55 +115,57 @@ class BreweryInfoCard extends React.Component {
             </CardActions>
             <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
               <CardContent>
-                <ListItem>
-                  <ListItemText
-                    inset="true"
-                    primary="Sunday"
-                    secondary={brewery.hours.sun}
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    inset="true"
-                    primary="Monday"
-                    secondary={brewery.hours.mon}
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    inset="true"
-                    primary="Tuesday"
-                    secondary={brewery.hours.tue}
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    inset="true"
-                    primary="Wednesday"
-                    secondary={brewery.hours.wed}
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    inset="true"
-                    primary="Thursday"
-                    secondary={brewery.hours.thu}
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    inset="true"
-                    primary="Friday"
-                    secondary={brewery.hours.fri}
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    inset="true"
-                    primary="Saturday"
-                    secondary={brewery.hours.sat}
-                  />
-                </ListItem>
+                <List>
+                  <ListItem>
+                    <ListItemText
+                      inset="true"
+                      primary="Sunday"
+                      secondary={brewery.hours.sun}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText
+                      inset="true"
+                      primary="Monday"
+                      secondary={brewery.hours.mon}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText
+                      inset="true"
+                      primary="Tuesday"
+                      secondary={brewery.hours.tue}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText
+                      inset="true"
+                      primary="Wednesday"
+                      secondary={brewery.hours.wed}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText
+                      inset="true"
+                      primary="Thursday"
+                      secondary={brewery.hours.thu}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText
+                      inset="true"
+                      primary="Friday"
+                      secondary={brewery.hours.fri}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText
+                      inset="true"
+                      primary="Saturday"
+                      secondary={brewery.hours.sat}
+                    />
+                  </ListItem>
+                </List>
               </CardContent>
             </Collapse>
           </Card>

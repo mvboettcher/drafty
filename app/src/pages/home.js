@@ -11,16 +11,30 @@ const Home = () => (
     <center>
       <img
         style={{ paddingLeft: 30, paddingTop: 150 }}
-        alt="home icon"
-        src="/frothy-mug_icon.png"
+        alt="drafty icon"
+        src="/beer-mug_logo.png"
       />
       <div style={{ paddingTop: 30, paddingBottom: 30 }}>
         <Typography variant="display3">Drafty</Typography>
       </div>
-      <div style={{ paddingTop: 12 }}>
-        <Link to="/search-results" className="no-underline">
+      <div>
+        <Link to="/find-brewery" className="no-underline">
           <Button variant="raised" color="primary">
             Find a Brewery
+          </Button>
+        </Link>
+      </div>
+      <div style={{ marginTop: 20 }}>
+        <Link to="/coupon-wallet" className="no-underline">
+          <Button variant="raised" color="primary">
+            Coupon Wallet
+          </Button>
+        </Link>
+      </div>
+      <div style={{ marginTop: 20 }}>
+        <Link to="/favorites" className="no-underline">
+          <Button variant="raised" color="primary">
+            Favorites
           </Button>
         </Link>
       </div>

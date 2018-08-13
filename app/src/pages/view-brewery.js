@@ -46,7 +46,8 @@ const mapStateToProps = state => {
     longitude: state.brewery.location.longitude,
     phone: state.brewery.phone,
     rating: state.brewery.rating,
-    website: state.brewery.website
+    website: state.brewery.website,
+    image: state.brewery.image
   }
 }
 

@@ -32,7 +32,7 @@ const MenuListItems = (
       </ListItem>
     </Link>
 
-    <Link to="/search-results" className="router-link">
+    <Link to="/find-brewery" className="router-link">
       <ListItem button>
         <ListItemIcon>
           <ExploreIcon />
