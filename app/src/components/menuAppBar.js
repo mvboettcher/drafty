@@ -29,12 +29,12 @@ const styles = theme => ({
 })
 
 const MenuAppBar = props => {
-  const { classes } = props
+  const { classes, history } = props
   return (
     <div className={classes.root}>
       <AppBar position="fixed">
         <Toolbar>
-          <Button color="inherit">
+          <Button color="inherit" onClick={e => history.goBack()}>
             <ArrowBackIcon />
           </Button>
           <Typography

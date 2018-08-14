@@ -7,6 +7,7 @@ import SearchResults from './pages/search-results'
 import Favorites from './pages/favorites'
 import CouponWallet from './pages/coupon-wallet'
 import ViewBrewery from './pages/view-brewery'
+import TestPageMap from './pages/test-page-map'
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route exact path="/search-results/:id" component={ViewBrewery} />
           <Route exact path="/favorites" component={Favorites} />
           <Route exact path="/coupon-wallet" component={CouponWallet} />
+          <Route exact path="/test-page-map" component={TestPageMap} />
         </Switch>
       </BrowserRouter>
     )

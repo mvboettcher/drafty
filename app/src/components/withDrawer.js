@@ -13,53 +13,75 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { DRAWER_TOGGLED } from '../constants'
 
-const MenuListItems = (
-  <div>
-    <div className="flex">
-      <Typography className="menu-title" variant="display1">
-        Menu
-      </Typography>
-      <img className="menu-tap" src="/beer-tap_icon.png" />
+const MenuListItems = props => {
+  return (
+    <div>
+      <div className="flex">
+        <Typography
+          className="menu-title"
+          variant="display1"
+          style={{ fontWeight: 'bold' }}
+        >
+          Menu
+        </Typography>
+        <img className="menu-tap" src="/beer-tap_icon.png" />
+      </div>
+      <Divider />
+
+      <Link to="/" className="no-underline">
+        <ListItem button onClick={props.toggleDrawer}>
+          <ListItemIcon
+            style={{
+              transform: `scale(${1.3})`
+            }}
+          >
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItem>
+      </Link>
+
+      <Link to="/find-brewery" className="router-link">
+        <ListItem button onClick={props.toggleDrawer}>
+          <ListItemIcon
+            style={{
+              transform: `scale(${1.3})`
+            }}
+          >
+            <ExploreIcon />
+          </ListItemIcon>
+          <ListItemText primary="Find a Brewery" />
+        </ListItem>
+      </Link>
+
+      <Link to="/coupon-wallet" className="router-link">
+        <ListItem button onClick={props.toggleDrawer}>
+          <ListItemIcon
+            style={{
+              transform: `scale(${1.3})`
+            }}
+          >
+            <AccountBalanceWalletIcon />
+          </ListItemIcon>
+          <ListItemText primary="Coupon Wallet" />
+        </ListItem>
+      </Link>
+
+      <Link to="/favorites" className="router-link">
+        <ListItem button onClick={props.toggleDrawer}>
+          <ListItemIcon
+            style={{
+              transform: `scale(${1.3})`
+            }}
+          >
+            <FavoriteIcon color="error" />
+          </ListItemIcon>
+          <ListItemText primary="Favorites" />
+        </ListItem>
+      </Link>
     </div>
-    <Divider />
-
-    <Link to="/" className="no-underline">
-      <ListItem button>
-        <ListItemIcon>
-          <HomeIcon />
-        </ListItemIcon>
-        <ListItemText primary="Home" />
-      </ListItem>
-    </Link>
-
-    <Link to="/find-brewery" className="router-link">
-      <ListItem button>
-        <ListItemIcon>
-          <ExploreIcon />
-        </ListItemIcon>
-        <ListItemText primary="Find a Brewery" />
-      </ListItem>
-    </Link>
-
-    <Link to="/coupon-wallet" className="router-link">
-      <ListItem button>
-        <ListItemIcon>
-          <AccountBalanceWalletIcon />
-        </ListItemIcon>
-        <ListItemText primary="Coupon Wallet" />
-      </ListItem>
-    </Link>
-
-    <Link to="/favorites" className="router-link">
-      <ListItem button>
-        <ListItemIcon>
-          <FavoriteIcon color="error" />
-        </ListItemIcon>
-        <ListItemText primary="Favorites" />
-      </ListItem>
-    </Link>
-  </div>
-)
+  )
+}
 
 const withDrawer = function(PageComponent) {
   const WrappedDrawerPageComponent = props => {
@@ -74,7 +96,7 @@ const withDrawer = function(PageComponent) {
           variant="temporary"
         >
           <div tabIndex={0} role="button">
-            {MenuListItems}
+            {MenuListItems(props)}
           </div>
         </Drawer>
       </div>

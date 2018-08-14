@@ -85,14 +85,18 @@ class BreweryInfoCard extends React.Component {
                 </ListItemIcon>
                 <ListItemText secondary={brewery.phone} />
               </ListItem>
-              <Link to={brewery.website} className="no-underline">
+              <a
+                href={brewery.website}
+                className="no-underline"
+                target={'_blank'}
+              >
                 <ListItem>
                   <ListItemIcon>
                     <LanguageIcon />
                   </ListItemIcon>
                   <ListItemText secondary={brewery.website} />
                 </ListItem>
-              </Link>
+              </a>
             </CardContent>
             <CardActions className={classes.actions} disableActionSpacing>
               <Typography style={{ marginLeft: 34 }} variant="button">
