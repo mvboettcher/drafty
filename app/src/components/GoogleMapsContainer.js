@@ -2,6 +2,7 @@ import React from 'react'
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
+// import { findBrewery } from '../reducers/findBrewery'
 
 class GoogleMapsContainer extends React.Component {
   constructor(props) {
@@ -11,9 +12,6 @@ class GoogleMapsContainer extends React.Component {
       activeMarker: {},
       selectedPlace: {}
     }
-    // binding this to event-handler functions
-    this.onMarkerClick = this.onMarkerClick.bind(this)
-    this.onMapClick = this.onMapClick.bind(this)
   }
   onMarkerClick = (props, marker, e) => {
     this.setState({
@@ -30,11 +28,12 @@ class GoogleMapsContainer extends React.Component {
       })
     }
   }
+
   render() {
     const style = {
       width: '100%',
       height: '50vh',
-      marginTop: 70
+      marginTop: 60
     }
     return (
       <Map
@@ -43,14 +42,15 @@ class GoogleMapsContainer extends React.Component {
         style={style}
         google={this.props.google}
         onClick={this.onMapClick}
-        zoom={14}
-        initialCenter={{ lat: 39.648209, lng: -75.711185 }}
+        zoom={13}
+        initialCenter={{ lat: 32.807076, lng: -79.94501 }}
       >
         <Marker
           onClick={this.onMarkerClick}
-          title={'Brewery Name'}
-          position={{ lat: 39.648209, lng: -75.711185 }}
-          name={'Brewery Name'}
+          title={'Current Location'}
+          position={{ lat: 32.807076, lng: -79.94501 }}
+          // position={(findBrewery.latitude, findBrewery.longitude)}
+          name={'Current Location'}
         />
         <InfoWindow
           marker={this.state.activeMarker}

@@ -73,30 +73,32 @@ class BreweryInfoCard extends React.Component {
               title="mmm...beer..."
             />
             <CardContent>
-              <ListItem>
-                <ListItemIcon>
-                  <PlaceIcon />
-                </ListItemIcon>
-                <ListItemText secondary={brewery.location.address} />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <PhoneIcon />
-                </ListItemIcon>
-                <ListItemText secondary={brewery.phone} />
-              </ListItem>
-              <a
-                href={brewery.website}
-                className="no-underline"
-                target={'_blank'}
-              >
+              <List>
                 <ListItem>
                   <ListItemIcon>
-                    <LanguageIcon />
+                    <PlaceIcon style={{ color: 'black' }} />
                   </ListItemIcon>
-                  <ListItemText secondary={brewery.website} />
+                  <ListItemText secondary={brewery.location.address} />
                 </ListItem>
-              </a>
+                <ListItem>
+                  <ListItemIcon>
+                    <PhoneIcon style={{ color: 'black' }} />
+                  </ListItemIcon>
+                  <ListItemText secondary={brewery.phone} />
+                </ListItem>
+                <a
+                  href={brewery.website}
+                  className="no-underline"
+                  target={'_blank'}
+                >
+                  <ListItem>
+                    <ListItemIcon>
+                      <LanguageIcon style={{ color: 'black' }} />
+                    </ListItemIcon>
+                    <ListItemText secondary={brewery.website} />
+                  </ListItem>
+                </a>
+              </List>
             </CardContent>
             <CardActions className={classes.actions} disableActionSpacing>
               <Typography style={{ marginLeft: 34 }} variant="button">

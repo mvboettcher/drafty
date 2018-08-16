@@ -4,11 +4,13 @@ import withDrawer from '../components/withDrawer'
 import MenuAppBar from '../components/menuAppBar'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
-import NearMeIcon from '@material-ui/icons/NearMeTwoTone'
-import MapIcon from '@material-ui/icons/MapTwoTone'
+import ExploreIcon from '@material-ui/icons/Explore'
+import MapIcon from '@material-ui/icons/Map'
 import AddressField from '../components/AddressField'
+import { findBreweryByCurrentLocation } from '../action-creators/breweries'
+import { connect } from 'react-redux'
 
-const FindBrewery = () => (
+const FindBrewery = props => (
   <div>
     <MenuAppBar title="Find a Brewery" />
     <center>
@@ -16,10 +18,10 @@ const FindBrewery = () => (
         style={{ display: 'flex', justifyContent: 'center', marginTop: 150 }}
       >
         <MapIcon
-          style={{ transform: `scale(${4})`, padding: 35, color: 'black' }}
+          style={{ transform: `scale(${4})`, padding: 35, color: 'grey' }}
         />
-        <NearMeIcon
-          style={{ transform: `scale(${4})`, padding: 35, color: 'black' }}
+        <ExploreIcon
+          style={{ transform: `scale(${4})`, padding: 35, color: 'grey' }}
         />
       </div>
       <div
@@ -58,6 +60,7 @@ const FindBrewery = () => (
         </Typography>
         <Link to="/search-results" className="no-underline">
           <Button
+            onClick={props.getCurrentLocation}
             variant="raised"
             color="primary"
             style={{ marginBottom: 30, marginLeft: 20, borderRadius: 30 }}
@@ -69,4 +72,13 @@ const FindBrewery = () => (
     </center>
   </div>
 )
-export default withDrawer(FindBrewery)
+
+const mapActionToProps = dispatch => ({
+  getCurrentLocation: e => dispatch(findBreweryByCurrentLocation)
+})
+
+const connector = connect(
+  state => state,
+  mapActionToProps
+)
+export default connector(withDrawer(FindBrewery))

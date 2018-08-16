@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getBrewery } from '../action-creators/breweries'
-import BreweryInfoCard from '../components/breweryInfoCard'
+import BreweryInfoCard from '../components/BreweryInfoCard'
 import MenuAppBar from '../components/menuAppBar'
 import withDrawer from '../components/withDrawer'
 
