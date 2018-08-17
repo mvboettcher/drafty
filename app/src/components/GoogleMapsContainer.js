@@ -2,7 +2,6 @@ import React from 'react'
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
-// import { findBrewery } from '../reducers/findBrewery'
 
 class GoogleMapsContainer extends React.Component {
   constructor(props) {
@@ -35,6 +34,8 @@ class GoogleMapsContainer extends React.Component {
       height: '50vh',
       marginTop: 60
     }
+    console.log('COOORDS: ', this.props.coords)
+
     return (
       <Map
         item
@@ -43,13 +44,18 @@ class GoogleMapsContainer extends React.Component {
         google={this.props.google}
         onClick={this.onMapClick}
         zoom={13}
-        initialCenter={{ lat: 32.807076, lng: -79.94501 }}
+        initialCenter={{
+          lat: this.props.coords.lat,
+          lng: this.props.coords.lng
+        }}
       >
         <Marker
           onClick={this.onMarkerClick}
           title={'Current Location'}
-          position={{ lat: 32.807076, lng: -79.94501 }}
-          // position={(findBrewery.latitude, findBrewery.longitude)}
+          position={{
+            lat: this.props.coords.lat,
+            lng: this.props.coords.lng
+          }}
           name={'Current Location'}
         />
         <InfoWindow

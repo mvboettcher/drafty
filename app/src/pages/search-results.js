@@ -1,22 +1,40 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Typography from '@material-ui/core/Typography'
 import withDrawer from '../components/withDrawer'
 import MenuAppBar from '../components/menuAppBar'
 import BreweryListItems from '../components/BreweryListItems'
 import GoogleMapsContainer from '../components/GoogleMapsContainer'
+import Geolocation from '../lib/findCurrentLocation'
 
-const SearchResults = props => {
-  // console.log(JSON.stringify(navigator.geolocation))
-  return (
-    <div>
-      <MenuAppBar title="Search Results" />
+class SearchResults extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+
+  render() {
+    return (
       <div>
-        <GoogleMapsContainer />
+        <Geolocation />
+        <MenuAppBar title="Search Results" />
+        <div>
+          <GoogleMapsContainer coords={this.props.coords} />
+        </div>
+        <div style={{ paddingTop: '58vh' }}>
+          <BreweryListItems />
+        </div>
       </div>
-      <div style={{ paddingTop: '58vh' }}>
-        <BreweryListItems />
-      </div>
-    </div>
-  )
+    )
+  }
 }
-export default withDrawer(SearchResults)
+
+const mapStateToProps = ({ currentPosition }) => {
+  const { coords } = currentPosition
+  return { coords }
+}
+
+export default connect(
+  mapStateToProps,
+  {}
+)(withDrawer(SearchResults))

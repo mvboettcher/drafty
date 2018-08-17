@@ -7,11 +7,14 @@ import { Link } from 'react-router-dom'
 import ExploreIcon from '@material-ui/icons/Explore'
 import MapIcon from '@material-ui/icons/Map'
 import AddressField from '../components/AddressField'
-import { findBreweryByCurrentLocation } from '../action-creators/breweries'
+import { getCurrentLocation } from '../action-creators/positions'
 import { connect } from 'react-redux'
+import { SEARCH_STREET_ADDRESS_UPDATED } from '../constants'
+import Geolocation from '../lib/findCurrentLocation'
 
 const FindBrewery = props => (
   <div>
+    <Geolocation />
     <MenuAppBar title="Find a Brewery" />
     <center>
       <div
@@ -33,9 +36,9 @@ const FindBrewery = props => (
           marginLeft: 50
         }}
       >
-        <AddressField />
         <Link to="/search-results" className="no-underline">
           <Button
+            onClick={() => console.log('search for breweries from address...')}
             variant="raised"
             color="primary"
             style={{ marginBottom: 30, marginLeft: 20, borderRadius: 30 }}
@@ -60,7 +63,9 @@ const FindBrewery = props => (
         </Typography>
         <Link to="/search-results" className="no-underline">
           <Button
-            onClick={props.getCurrentLocation}
+            onClick={() =>
+              console.log('search for breweries from current location...')
+            }
             variant="raised"
             color="primary"
             style={{ marginBottom: 30, marginLeft: 20, borderRadius: 30 }}
@@ -73,9 +78,7 @@ const FindBrewery = props => (
   </div>
 )
 
-const mapActionToProps = dispatch => ({
-  getCurrentLocation: e => dispatch(findBreweryByCurrentLocation)
-})
+const mapActionToProps = dispatch => ({})
 
 const connector = connect(
   state => state,

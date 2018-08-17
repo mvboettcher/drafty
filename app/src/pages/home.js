@@ -4,8 +4,9 @@ import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
 import withDrawer from '../components/withDrawer'
 import MenuAppBar from '../components/menuAppBar'
+import { connect } from 'react-redux'
 
-const Home = () => (
+const Home = props => (
   <div style={{ margin: 48 }}>
     <MenuAppBar title="Home" />
     <center>
@@ -28,6 +29,7 @@ const Home = () => (
             <Button
               variant="raised"
               color="primary"
+              onClick={() => console.log('routing to find breweries...')}
               // style={{ borderRadius: 20 }}
             >
               Find a Brewery
@@ -61,4 +63,11 @@ const Home = () => (
   </div>
 )
 
-export default withDrawer(Home)
+const mapActionToProps = dispatch => ({})
+
+const connector = connect(
+  state => state,
+  mapActionToProps
+)
+
+export default connector(withDrawer(Home))

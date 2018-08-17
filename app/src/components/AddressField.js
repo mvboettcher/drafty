@@ -15,13 +15,15 @@ const styles = theme => ({
 
 const AddressField = props => {
   return (
-    <div className={props.container}>
+    <div className={props.classes.container}>
       <Input
         placeholder="Street Address"
         className={props.input}
         inputProps={{
           'aria-label': 'Description'
         }}
+        value={props.streetAddress}
+        onChange={props.onChange}
       />
     </div>
   )

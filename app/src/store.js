@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { breweries, brewery } from './reducers/breweries'
-import { findBrewery } from './reducers/findBrewery'
+import { currentPosition } from './reducers/positions'
 import { drawer } from './reducers/drawer'
 import thunk from 'redux-thunk'
 
@@ -9,7 +9,7 @@ const store = createStore(
     drawer,
     breweries,
     brewery,
-    findBrewery
+    currentPosition
   }),
   applyMiddleware(thunk)
 )
