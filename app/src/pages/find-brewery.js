@@ -11,6 +11,7 @@ import { getCurrentLocation } from '../action-creators/positions'
 import { connect } from 'react-redux'
 import { SEARCH_STREET_ADDRESS_UPDATED } from '../constants'
 import Geolocation from '../lib/findCurrentLocation'
+import LocationSearchInput from '../components/LocationSearchInput'
 
 const FindBrewery = props => (
   <div>
@@ -36,6 +37,7 @@ const FindBrewery = props => (
           marginLeft: 50
         }}
       >
+        <LocationSearchInput />
         <Link to="/search-results" className="no-underline">
           <Button
             onClick={() => console.log('search for breweries from address...')}

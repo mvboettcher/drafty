@@ -124,49 +124,49 @@ class BreweryInfoCard extends React.Component {
                 <List>
                   <ListItem>
                     <ListItemText
-                      inset="true"
+                      inset={true}
                       primary="Sunday"
                       secondary={brewery.hours.sun}
                     />
                   </ListItem>
                   <ListItem>
                     <ListItemText
-                      inset="true"
+                      inset={true}
                       primary="Monday"
                       secondary={brewery.hours.mon}
                     />
                   </ListItem>
                   <ListItem>
                     <ListItemText
-                      inset="true"
+                      inset={true}
                       primary="Tuesday"
                       secondary={brewery.hours.tue}
                     />
                   </ListItem>
                   <ListItem>
                     <ListItemText
-                      inset="true"
+                      inset={true}
                       primary="Wednesday"
                       secondary={brewery.hours.wed}
                     />
                   </ListItem>
                   <ListItem>
                     <ListItemText
-                      inset="true"
+                      inset={true}
                       primary="Thursday"
                       secondary={brewery.hours.thu}
                     />
                   </ListItem>
                   <ListItem>
                     <ListItemText
-                      inset="true"
+                      inset={true}
                       primary="Friday"
                       secondary={brewery.hours.fri}
                     />
                   </ListItem>
                   <ListItem>
                     <ListItemText
-                      inset="true"
+                      inset={true}
                       primary="Saturday"
                       secondary={brewery.hours.sat}
                     />
