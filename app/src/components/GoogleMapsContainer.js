@@ -64,12 +64,9 @@ class GoogleMapsContainer extends React.Component {
         >
           <Paper>
             <Typography variant="headline" component="h4">
-              Revelry Brewing Co. {/* brewery.name */}
+              Current Location {/* brewery.name */}
             </Typography>
-            <Typography component="p">
-              10 Conroy St, Charleston, SC 29403 {/* brewery.address */} <br />
-              (843) 203-6194 {/* brewery.phone */}
-            </Typography>
+            <Typography component="p">(Street Address)</Typography>
           </Paper>
         </InfoWindow>
       </Map>

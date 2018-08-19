@@ -4,7 +4,6 @@ import {
   CURRENT_POSITION_FAILED
 } from '../constants'
 
-// { lat: 32.807076, lng: -79.94501 }
 const initialState = {
   streetAddress: '',
   coords: {

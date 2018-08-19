@@ -31,6 +31,7 @@ class SearchResults extends Component {
 
 const mapStateToProps = ({ currentPosition }) => {
   const { coords } = currentPosition
+
   return { coords }
 }
 

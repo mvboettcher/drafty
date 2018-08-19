@@ -17,11 +17,12 @@ import Avatar from '@material-ui/core/Avatar'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import red from '@material-ui/core/colors/red'
-import FavoriteIcon from '@material-ui/icons/FavoriteBorder'
+import FavoriteIcon from '@material-ui/icons/Favorite'
 import PlaceIcon from '@material-ui/icons/PlaceTwoTone'
 import LanguageIcon from '@material-ui/icons/LanguageTwoTone'
 import PhoneIcon from '@material-ui/icons/PhoneTwoTone'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import AddToFavoritesButton from './AddToFavoritesButton'
 
 const styles = theme => ({
   card: {
@@ -115,8 +116,8 @@ class BreweryInfoCard extends React.Component {
               >
                 <ExpandMoreIcon />
               </IconButton>
-              <IconButton aria-label="Add to favorites">
-                <FavoriteIcon color="error" />
+              <IconButton>
+                <AddToFavoritesButton />
               </IconButton>
             </CardActions>
             <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>

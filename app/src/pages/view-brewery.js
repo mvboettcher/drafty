@@ -29,7 +29,7 @@ class ViewBrewery extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(JSON.stringify(state.brewery))
+  // console.log(JSON.stringify(state.brewery))
   return {
     brewery: state.brewery,
     id: state.brewery._id,
