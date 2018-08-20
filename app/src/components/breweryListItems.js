@@ -1,8 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { ListItem, ListItemText, List } from '@material-ui/core'
+import { filter } from 'ramda'
+import { ListItem, ListItemText, List, Typography } from '@material-ui/core'
 import PlaceIcon from '@material-ui/icons/PlaceSharp'
+import { isLessThan4mi, getDistanceFromLatLongInMi } from '../lib/getDistance'
 
 const BreweryListItems = props => (
   <div>
@@ -14,8 +16,16 @@ const BreweryListItems = props => (
             to={`/search-results/${brewery._id}`}
             className="router-link"
           >
-            <ListItem button>
-              <PlaceIcon />
+            <ListItem button divider={true}>
+              <PlaceIcon style={{ color: 'FF965F' }} />
+              <Typography color="textSecondary">
+                {`${getDistanceFromLatLongInMi(
+                  props.coords.lat,
+                  props.coords.lng,
+                  brewery.location.latitude,
+                  brewery.location.longitude
+                ).toFixed(1)} mi`}
+              </Typography>
               <ListItemText
                 primary={brewery.name}
                 secondary={brewery.location.address}
@@ -29,7 +39,12 @@ const BreweryListItems = props => (
 )
 
 const mapStateToProps = state => {
-  return { breweries: state.breweries }
+  return {
+    breweries: state.currentPosition.coords
+      ? filter(isLessThan4mi(state.currentPosition.coords), state.breweries)
+      : [],
+    coords: state.currentPosition.coords
+  }
 }
 
 export default connect(mapStateToProps)(BreweryListItems)
@@ -40,7 +55,7 @@ export default connect(mapStateToProps)(BreweryListItems)
 // import { Link } from 'react-router-dom'
 // import { ListItem, ListItemText, List } from '@material-ui/core'
 // import PlaceIcon from '@material-ui/icons/PlaceSharp'
-// import { isLessThan2k } from '../lib/isLessThan2k'
+// import { isLessThan3k } from '../lib/isLessThan3k
 
 // const li = brewery => {
 //   return (

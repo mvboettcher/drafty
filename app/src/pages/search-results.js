@@ -7,26 +7,23 @@ import BreweryListItems from '../components/BreweryListItems'
 import GoogleMapsContainer from '../components/GoogleMapsContainer'
 import Geolocation from '../lib/findCurrentLocation'
 
-class SearchResults extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
+const SearchResults = props => {
+  const DisplayMap = props.coords ? (
+    <GoogleMapsContainer coords={props.coords} />
+  ) : (
+    <h2>Loading Map...</h2>
+  )
 
-  render() {
-    return (
-      <div>
-        <Geolocation />
-        <MenuAppBar title="Search Results" />
-        <div>
-          <GoogleMapsContainer coords={this.props.coords} />
-        </div>
-        <div style={{ paddingTop: '58vh' }}>
-          <BreweryListItems />
-        </div>
+  return (
+    <div>
+      <Geolocation />
+      <MenuAppBar title="Search Results" />
+      <div>{DisplayMap}</div>
+      <div style={{ paddingTop: '58vh' }}>
+        <BreweryListItems />
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 const mapStateToProps = ({ currentPosition }) => {

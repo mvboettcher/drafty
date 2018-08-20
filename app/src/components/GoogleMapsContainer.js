@@ -2,27 +2,30 @@ import React from 'react'
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
+import { connect } from 'react-redux'
+import { filter, equals, always } from 'ramda'
+import { isLessThan4mi } from '../lib/getDistance'
 
 class GoogleMapsContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      showingInfoWindow: false,
+      showingInfoWindow: always(false),
       activeMarker: {},
       selectedPlace: {}
     }
   }
-  onMarkerClick = (props, marker, e) => {
+  onMarkerClick = breweryID => (props, marker, e) => {
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
-      showingInfoWindow: true
+      showingInfoWindow: equals(breweryID)
     })
   }
   onMapClick = props => {
     if (this.state.showingInfoWindow) {
       this.setState({
-        showingInfoWindow: false,
+        showingInfoWindow: always(false),
         activeMarker: null
       })
     }
@@ -50,7 +53,7 @@ class GoogleMapsContainer extends React.Component {
         }}
       >
         <Marker
-          onClick={this.onMarkerClick}
+          onClick={this.onMarkerClick('current location')}
           title={'Current Location'}
           position={{
             lat: this.props.coords.lat,
@@ -60,20 +63,67 @@ class GoogleMapsContainer extends React.Component {
         />
         <InfoWindow
           marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
+          visible={this.state.showingInfoWindow('current location')}
         >
           <Paper>
             <Typography variant="headline" component="h4">
-              Current Location {/* brewery.name */}
+              Current Position
             </Typography>
-            <Typography component="p">(Street Address)</Typography>
+            <Typography component="p">You are here!</Typography>
           </Paper>
         </InfoWindow>
+        {this.props.breweries.map((brewery, idx) => {
+          return (
+            <Marker
+              key={brewery._id}
+              onClick={this.onMarkerClick(brewery._id)}
+              title={brewery.name}
+              position={{
+                lat: brewery.location.latitude,
+                lng: brewery.location.longitude
+              }}
+              name={brewery.name}
+              icon={{
+                url: '/beer-glass_pin.png'
+              }}
+            />
+          )
+        })}
+        {this.props.breweries.map((brewery, idx) => {
+          return (
+            <InfoWindow
+              key={brewery._id}
+              marker={this.state.activeMarker}
+              visible={this.state.showingInfoWindow(brewery._id)}
+            >
+              <Paper>
+                <Typography variant="headline" component="h4">
+                  {brewery.name}
+                </Typography>
+                <Typography component="p">
+                  {brewery.location.address}
+                </Typography>
+              </Paper>
+            </InfoWindow>
+          )
+        })}
       </Map>
     )
   }
 }
 
-export default GoogleApiWrapper({
-  apiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
-})(GoogleMapsContainer)
+const mapStateToProps = state => {
+  return {
+    breweries: state.currentPosition.coords
+      ? filter(isLessThan4mi(state.currentPosition.coords), state.breweries)
+      : []
+  }
+}
+
+const connector = connect(mapStateToProps)
+
+export default connector(
+  GoogleApiWrapper({
+    apiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+  })(GoogleMapsContainer)
+)
