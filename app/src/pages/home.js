@@ -4,28 +4,54 @@ import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
 import withDrawer from '../components/withDrawer'
 import MenuAppBar from '../components/menuAppBar'
+import { connect } from 'react-redux'
 
 const Home = () => (
-  <div style={{ padding: 48 }}>
+  <div>
     <MenuAppBar title="Home" />
-    <center>
+
+    <div className="home-container">
       <img
-        style={{ paddingLeft: 30, paddingTop: 150 }}
-        alt="home icon"
-        src="/frothy-mug_icon.png"
+        style={{ paddingLeft: 30 }}
+        alt="drafty icon"
+        src="/beer-mug_logo.png"
       />
-      <div style={{ paddingTop: 30, paddingBottom: 30 }}>
-        <Typography variant="display3">Drafty</Typography>
+      <div>
+        <Typography
+          variant="display3"
+          style={{ fontWeight: 'bold', letterSpacing: 1, margin: 10 }}
+        >
+          Drafty
+        </Typography>
       </div>
-      <div style={{ paddingTop: 12 }}>
-        <Link to="/search-results" className="no-underline">
+      <div className="home-btns">
+        <Link to="/find-brewery" className="no-underline">
           <Button variant="raised" color="primary">
             Find a Brewery
           </Button>
         </Link>
+
+        <Link to="/coupon-wallet" className="no-underline">
+          <Button variant="raised" color="primary">
+            Coupon Wallet
+          </Button>
+        </Link>
+
+        <Link to="/favorites" className="no-underline">
+          <Button variant="raised" color="primary">
+            Favorites
+          </Button>
+        </Link>
       </div>
-    </center>
+    </div>
   </div>
 )
 
-export default withDrawer(Home)
+const mapActionToProps = dispatch => ({})
+
+const connector = connect(
+  state => state,
+  mapActionToProps
+)
+
+export default connector(withDrawer(Home))

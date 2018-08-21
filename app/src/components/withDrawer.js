@@ -1,7 +1,7 @@
 import React from 'react'
 import Drawer from '@material-ui/core/Drawer'
+import Avatar from '@material-ui/core/Avatar'
 import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import HomeIcon from '@material-ui/icons/HomeSharp'
 import ExploreIcon from '@material-ui/icons/ExploreSharp'
@@ -13,53 +13,55 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { DRAWER_TOGGLED } from '../constants'
 
-const MenuListItems = (
-  <div>
-    <div className="flex">
-      <Typography className="menu-title" variant="display1">
-        Menu
-      </Typography>
-      <img className="menu-tap" src="/beer-tap_icon.png" />
+const MenuListItems = props => {
+  return (
+    <div>
+      <div className="row">
+        <Typography className="menu-title" variant="display1">
+          Menu
+        </Typography>
+        <img className="menu-tap" src="/beer-tap_icon.png" alt="menu" />
+      </div>
+      <Divider style={{ marginTop: 20, marginBottom: 20 }} />
+
+      <Link to="/" className="no-underline">
+        <ListItem button onClick={props.toggleDrawer}>
+          <Avatar>
+            <HomeIcon />
+          </Avatar>
+          <ListItemText primary="Home" />
+        </ListItem>
+      </Link>
+
+      <Link to="/find-brewery" className="no-underline">
+        <ListItem button onClick={props.toggleDrawer}>
+          <Avatar>
+            <ExploreIcon />
+          </Avatar>
+          <ListItemText primary="Find a Brewery" />
+        </ListItem>
+      </Link>
+
+      <Link to="/coupon-wallet" className="no-underline">
+        <ListItem button onClick={props.toggleDrawer}>
+          <Avatar>
+            <AccountBalanceWalletIcon />
+          </Avatar>
+          <ListItemText primary="Coupon Wallet" />
+        </ListItem>
+      </Link>
+
+      <Link to="/favorites" className="no-underline">
+        <ListItem button onClick={props.toggleDrawer}>
+          <Avatar style={{ backgroundColor: 'red' }}>
+            <FavoriteIcon style={{ color: 'white' }} />
+          </Avatar>
+          <ListItemText primary="Favorites" />
+        </ListItem>
+      </Link>
     </div>
-    <Divider />
-
-    <Link to="/" className="no-underline">
-      <ListItem button>
-        <ListItemIcon>
-          <HomeIcon />
-        </ListItemIcon>
-        <ListItemText primary="Home" />
-      </ListItem>
-    </Link>
-
-    <Link to="/search-results" className="router-link">
-      <ListItem button>
-        <ListItemIcon>
-          <ExploreIcon />
-        </ListItemIcon>
-        <ListItemText primary="Find a Brewery" />
-      </ListItem>
-    </Link>
-
-    <Link to="/coupon-wallet" className="router-link">
-      <ListItem button>
-        <ListItemIcon>
-          <AccountBalanceWalletIcon />
-        </ListItemIcon>
-        <ListItemText primary="Coupon Wallet" />
-      </ListItem>
-    </Link>
-
-    <Link to="/favorites" className="router-link">
-      <ListItem button>
-        <ListItemIcon>
-          <FavoriteIcon color="error" />
-        </ListItemIcon>
-        <ListItemText primary="Favorites" />
-      </ListItem>
-    </Link>
-  </div>
-)
+  )
+}
 
 const withDrawer = function(PageComponent) {
   const WrappedDrawerPageComponent = props => {
@@ -74,7 +76,7 @@ const withDrawer = function(PageComponent) {
           variant="temporary"
         >
           <div tabIndex={0} role="button">
-            {MenuListItems}
+            {MenuListItems(props)}
           </div>
         </Drawer>
       </div>

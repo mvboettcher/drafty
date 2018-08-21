@@ -22,7 +22,6 @@
   font-size: large;
 }
 
-.router-link,
 .no-underline {
   text-decoration: none;
 }
@@ -38,15 +37,70 @@
   padding-left: 40px;
 }
 
-.flex {
-  display: flex;
+.heart {
+  color: red;
 }
 
-@keyframes App-logo-spin {
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+}
+
+.home-logo {
+  padding-left: 30;
+}
+
+.home-btns {
+  display: flex;
+  flex-direction: column;
+  height: 165px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search-go {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 268px;
+}
+
+.go-btn {
+  border-radius: 30px;
+}
+
+.find-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  margin-bottom: 120px;
+}
+
+.find-logo {
+  transform: scale(4);
+  padding: 35px;
+  color: grey;
+}
+
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
