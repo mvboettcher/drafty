@@ -4,8 +4,6 @@ import withDrawer from '../components/withDrawer'
 import MenuAppBar from '../components/menuAppBar'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
-import ExploreIcon from '@material-ui/icons/Explore'
-import MapIcon from '@material-ui/icons/Map'
 import { connect } from 'react-redux'
 // import { SEARCH_STREET_ADDRESS_UPDATED } from '../constants'
 import Geolocation from '../lib/findCurrentLocation'
@@ -22,11 +20,11 @@ const FindBrewery = props => (
       </div>
       <div>
         <div className="search-go">
-          <LocationSearchInput />
+          <Typography>Current Location</Typography>
           <Link to="/search-results" className="no-underline">
             <Button
               onClick={() =>
-                console.log('search for breweries from address...')
+                console.log('search for breweries from current location...')
               }
               variant="raised"
               color="primary"
@@ -37,11 +35,11 @@ const FindBrewery = props => (
           </Link>
         </div>
         <div className="search-go">
-          <Typography>Current Location</Typography>
+          <LocationSearchInput />
           <Link to="/search-results" className="no-underline">
             <Button
               onClick={() =>
-                console.log('search for breweries from current location...')
+                console.log('search for breweries from address...')
               }
               variant="raised"
               color="primary"

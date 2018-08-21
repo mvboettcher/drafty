@@ -65,7 +65,7 @@ class BreweryInfoCard extends React.Component {
       <div style={{ marginTop: 90 }}>
         <center>
           <Card className={classes.card}>
-            <CardHeader title={brewery.name} />
+            <CardHeader title={brewery.name} subheader={brewery.rating} />
             <CardMedia
               className={classes.media}
               image={brewery.image}
