@@ -1,5 +1,6 @@
 import React from 'react'
 import Drawer from '@material-ui/core/Drawer'
+import Avatar from '@material-ui/core/Avatar'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
@@ -16,66 +17,46 @@ import { DRAWER_TOGGLED } from '../constants'
 const MenuListItems = props => {
   return (
     <div>
-      <div className="flex">
-        <Typography
-          className="menu-title"
-          variant="display1"
-          style={{ fontWeight: 'bold' }}
-        >
+      <div className="row">
+        <Typography className="menu-title" variant="display1">
           Menu
         </Typography>
-        <img className="menu-tap" src="/beer-tap_icon.png" />
+        <img className="menu-tap" src="/beer-tap_icon.png" alt="menu" />
       </div>
-      <Divider />
+      <Divider style={{ marginTop: 20, marginBottom: 20 }} />
 
       <Link to="/" className="no-underline">
         <ListItem button onClick={props.toggleDrawer}>
-          <ListItemIcon
-            style={{
-              transform: `scale(${1.3})`
-            }}
-          >
+          <Avatar>
             <HomeIcon />
-          </ListItemIcon>
+          </Avatar>
           <ListItemText primary="Home" />
         </ListItem>
       </Link>
 
-      <Link to="/find-brewery" className="router-link">
+      <Link to="/find-brewery" className="no-underline">
         <ListItem button onClick={props.toggleDrawer}>
-          <ListItemIcon
-            style={{
-              transform: `scale(${1.3})`
-            }}
-          >
+          <Avatar>
             <ExploreIcon />
-          </ListItemIcon>
+          </Avatar>
           <ListItemText primary="Find a Brewery" />
         </ListItem>
       </Link>
 
-      <Link to="/coupon-wallet" className="router-link">
+      <Link to="/coupon-wallet" className="no-underline">
         <ListItem button onClick={props.toggleDrawer}>
-          <ListItemIcon
-            style={{
-              transform: `scale(${1.3})`
-            }}
-          >
+          <Avatar>
             <AccountBalanceWalletIcon />
-          </ListItemIcon>
+          </Avatar>
           <ListItemText primary="Coupon Wallet" />
         </ListItem>
       </Link>
 
-      <Link to="/favorites" className="router-link">
+      <Link to="/favorites" className="no-underline">
         <ListItem button onClick={props.toggleDrawer}>
-          <ListItemIcon
-            style={{
-              transform: `scale(${1.3})`
-            }}
-          >
-            <FavoriteIcon color="error" />
-          </ListItemIcon>
+          <Avatar style={{ backgroundColor: 'red' }}>
+            <FavoriteIcon style={{ color: 'white' }} />
+          </Avatar>
           <ListItemText primary="Favorites" />
         </ListItem>
       </Link>

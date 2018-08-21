@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Checkbox from '@material-ui/core/Checkbox'
 import Favorite from '@material-ui/icons/Favorite'
@@ -16,8 +15,8 @@ class AddToFavoritesButton extends React.Component {
         <FormControlLabel
           control={
             <Checkbox
-              icon={<FavoriteBorder />}
-              checkedIcon={<Favorite />}
+              icon={<FavoriteBorder className="heart" />}
+              checkedIcon={<Favorite className="heart" />}
               value="checked"
             />
           }

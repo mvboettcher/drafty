@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import { Link } from 'react-router-dom'
 import classnames from 'classnames'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
@@ -13,20 +12,19 @@ import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
 import Collapse from '@material-ui/core/Collapse'
-import Avatar from '@material-ui/core/Avatar'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import red from '@material-ui/core/colors/red'
-import FavoriteIcon from '@material-ui/icons/Favorite'
-import PlaceIcon from '@material-ui/icons/PlaceTwoTone'
-import LanguageIcon from '@material-ui/icons/LanguageTwoTone'
-import PhoneIcon from '@material-ui/icons/PhoneTwoTone'
+import PlaceIcon from '@material-ui/icons/Place'
+import LanguageIcon from '@material-ui/icons/Language'
+import PhoneIcon from '@material-ui/icons/Phone'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import AddToFavoritesButton from './AddToFavoritesButton'
 
 const styles = theme => ({
   card: {
-    maxWidth: 400
+    maxWidth: 400,
+    marginBottom: 30
   },
   media: {
     height: 0,
@@ -64,9 +62,9 @@ class BreweryInfoCard extends React.Component {
     const { classes, brewery } = this.props
 
     return (
-      <div style={{ paddingTop: 100 }}>
+      <div style={{ marginTop: 90 }}>
         <center>
-          <Card style={{ marginBottom: 45 }} className={classes.card}>
+          <Card className={classes.card}>
             <CardHeader title={brewery.name} />
             <CardMedia
               className={classes.media}
@@ -77,7 +75,7 @@ class BreweryInfoCard extends React.Component {
               <List>
                 <ListItem>
                   <ListItemIcon>
-                    <PlaceIcon style={{ color: 'black' }} />
+                    <PlaceIcon style={{ color: 'FF965F' }} />
                   </ListItemIcon>
                   <ListItemText secondary={brewery.location.address} />
                 </ListItem>
@@ -116,9 +114,7 @@ class BreweryInfoCard extends React.Component {
               >
                 <ExpandMoreIcon />
               </IconButton>
-              <IconButton>
-                <AddToFavoritesButton />
-              </IconButton>
+              <AddToFavoritesButton />
             </CardActions>
             <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
               <CardContent>

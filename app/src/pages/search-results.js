@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import Typography from '@material-ui/core/Typography'
 import withDrawer from '../components/withDrawer'
 import MenuAppBar from '../components/menuAppBar'
 import BreweryListItems from '../components/BreweryListItems'

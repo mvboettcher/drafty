@@ -1,17 +1,8 @@
 import {
-  SEARCH_STREET_ADDRESS_UPDATED,
+  // SEARCH_STREET_ADDRESS_UPDATED,
   CURRENT_POSITION,
   CURRENT_POSITION_FAILED
 } from '../constants'
-
-/*const initialState = {
-  streetAddress: '',
-  coords: {
-    lat: 32.781634,
-    lng: -79.985249
-  },
-  error: ''
-}*/
 
 const initialState = {
   streetAddress: '',

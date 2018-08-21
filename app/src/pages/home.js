@@ -6,60 +6,44 @@ import withDrawer from '../components/withDrawer'
 import MenuAppBar from '../components/menuAppBar'
 import { connect } from 'react-redux'
 
-const Home = props => (
-  <div style={{ margin: 48 }}>
+const Home = () => (
+  <div>
     <MenuAppBar title="Home" />
-    <center>
-      <div style={{ marginTop: 120 }}>
-        <img
-          style={{ paddingLeft: 30 }}
-          alt="drafty icon"
-          src="/beer-mug_logo.png"
-        />
-        <div style={{ paddingTop: 30, paddingBottom: 30 }}>
-          <Typography
-            variant="display3"
-            style={{ fontWeight: 'bold', letterSpacing: 1 }}
-          >
-            Drafty
-          </Typography>
-        </div>
-        <div>
-          <Link to="/find-brewery" className="no-underline">
-            <Button
-              variant="raised"
-              color="primary"
-              onClick={() => console.log('routing to find breweries...')}
-              // style={{ borderRadius: 20 }}
-            >
-              Find a Brewery
-            </Button>
-          </Link>
-        </div>
-        <div style={{ marginTop: 20 }}>
-          <Link to="/coupon-wallet" className="no-underline">
-            <Button
-              variant="raised"
-              color="primary"
-              // style={{ borderRadius: 20 }}
-            >
-              Coupon Wallet
-            </Button>
-          </Link>
-        </div>
-        <div style={{ marginTop: 20 }}>
-          <Link to="/favorites" className="no-underline">
-            <Button
-              variant="raised"
-              color="primary"
-              // style={{ borderRadius: 20 }}
-            >
-              Favorites
-            </Button>
-          </Link>
-        </div>
+
+    <div className="home-container">
+      <img
+        style={{ paddingLeft: 30 }}
+        alt="drafty icon"
+        src="/beer-mug_logo.png"
+      />
+      <div>
+        <Typography
+          variant="display3"
+          style={{ fontWeight: 'bold', letterSpacing: 1, margin: 10 }}
+        >
+          Drafty
+        </Typography>
       </div>
-    </center>
+      <div className="home-btns">
+        <Link to="/find-brewery" className="no-underline">
+          <Button variant="raised" color="primary">
+            Find a Brewery
+          </Button>
+        </Link>
+
+        <Link to="/coupon-wallet" className="no-underline">
+          <Button variant="raised" color="primary">
+            Coupon Wallet
+          </Button>
+        </Link>
+
+        <Link to="/favorites" className="no-underline">
+          <Button variant="raised" color="primary">
+            Favorites
+          </Button>
+        </Link>
+      </div>
+    </div>
   </div>
 )
 

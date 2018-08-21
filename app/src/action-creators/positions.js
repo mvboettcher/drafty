@@ -1,4 +1,4 @@
-import { CURRENT_POSITION, CURRENT_POSITION_FAILED } from '../constants'
+import { CURRENT_POSITION } from '../constants'
 
 export const setCurrentLocation = coords => dispatch => {
   dispatch({

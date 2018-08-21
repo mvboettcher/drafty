@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { filter } from 'ramda'
 import { ListItem, ListItemText, List, Typography } from '@material-ui/core'
-import PlaceIcon from '@material-ui/icons/PlaceSharp'
+import PlaceIcon from '@material-ui/icons/Place'
 import { isLessThan4mi, getDistanceFromLatLongInMi } from '../lib/getDistance'
 
 const BreweryListItems = props => (
@@ -14,7 +14,7 @@ const BreweryListItems = props => (
           <Link
             key={idx}
             to={`/search-results/${brewery._id}`}
-            className="router-link"
+            className="no-underline"
           >
             <ListItem button divider={true}>
               <PlaceIcon style={{ color: 'FF965F' }} />
@@ -59,7 +59,7 @@ export default connect(mapStateToProps)(BreweryListItems)
 
 // const li = brewery => {
 //   return (
-//     <Link to="/breweries/:id" className="router-link">
+//     <Link to="/breweries/:id" className="no-underline">
 //       <ListItem button>
 //         <PlaceIcon />
 //         <ListItemText

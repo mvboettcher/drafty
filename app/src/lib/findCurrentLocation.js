@@ -10,7 +10,9 @@ class Geolocation extends Component {
   }
 
   findCurrentLocation = () => {
-    let err = {}
+    // let err = {
+    //   SNACKBAR
+    // }
     if (navigator.geolocation) {
       const timeoutVal = 10 * 1000 * 1000
       navigator.geolocation.getCurrentPosition(
