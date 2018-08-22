@@ -5,6 +5,7 @@ import { filter } from 'ramda'
 import { ListItem, ListItemText, List, Typography } from '@material-ui/core'
 import PlaceIcon from '@material-ui/icons/Place'
 import { isLessThan4mi, getDistanceFromLatLongInMi } from '../lib/getDistance'
+import sortByDistance from '../lib/sortByDistance'
 
 const BreweryListItems = props => (
   <div>
@@ -41,7 +42,10 @@ const BreweryListItems = props => (
 const mapStateToProps = state => {
   return {
     breweries: state.currentPosition.coords
-      ? filter(isLessThan4mi(state.currentPosition.coords), state.breweries)
+      ? sortByDistance(
+          state.currentPosition,
+          filter(isLessThan4mi(state.currentPosition.coords), state.breweries)
+        )
       : [],
     coords: state.currentPosition.coords
   }

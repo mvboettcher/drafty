@@ -4,16 +4,17 @@ import Checkbox from '@material-ui/core/Checkbox'
 import Favorite from '@material-ui/icons/Favorite'
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder'
 import { connect } from 'react-redux'
-import { find } from 'ramda'
+import { find, contains } from 'ramda'
 import { setFavorite } from '../action-creators/favorites'
 
 class AddToFavoritesButton extends React.Component {
-  handleChange = name => event => {
-    this.setState({ [name]: event.target.checked })
-  }
-
   render() {
-    const { brewery, saveBreweryAsFavorite, selectedBrewery } = this.props
+    const {
+      brewery,
+      saveBreweryAsFavorite,
+      selectedBrewery,
+      favorites
+    } = this.props
     return (
       <div>
         <FormControlLabel
@@ -21,10 +22,7 @@ class AddToFavoritesButton extends React.Component {
             <Checkbox
               icon={<FavoriteBorder className="heart" />}
               checkedIcon={<Favorite className="heart" />}
-              checked={
-                this.props.favorites.indexOf(brewery) > -1 ||
-                this.props.favorites.indexOf(selectedBrewery) > -1
-              }
+              checked={contains(brewery, favorites)}
               onChange={saveBreweryAsFavorite(brewery)}
             />
           }
