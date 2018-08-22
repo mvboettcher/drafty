@@ -5,7 +5,6 @@ import MenuAppBar from '../components/menuAppBar'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-// import { SEARCH_STREET_ADDRESS_UPDATED } from '../constants'
 import Geolocation from '../lib/findCurrentLocation'
 import LocationSearchInput from '../components/LocationSearchInput'
 

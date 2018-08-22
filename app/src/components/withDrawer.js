@@ -6,7 +6,6 @@ import ListItemText from '@material-ui/core/ListItemText'
 import HomeIcon from '@material-ui/icons/HomeSharp'
 import ExploreIcon from '@material-ui/icons/ExploreSharp'
 import FavoriteIcon from '@material-ui/icons/FavoriteSharp'
-import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWalletSharp'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'react-router-dom'
@@ -22,7 +21,7 @@ const MenuListItems = props => {
         </Typography>
         <img className="menu-tap" src="/beer-tap_icon.png" alt="menu" />
       </div>
-      <Divider style={{ marginTop: 20, marginBottom: 20 }} />
+      <Divider style={{ marginTop: 10, marginBottom: 10 }} />
 
       <Link to="/" className="no-underline">
         <ListItem button onClick={props.toggleDrawer}>
@@ -42,14 +41,14 @@ const MenuListItems = props => {
         </ListItem>
       </Link>
 
-      <Link to="/coupon-wallet" className="no-underline">
+      {/* <Link to="/coupon-wallet" className="no-underline">
         <ListItem button onClick={props.toggleDrawer}>
           <Avatar>
             <AccountBalanceWalletIcon />
           </Avatar>
           <ListItemText primary="Coupon Wallet" />
         </ListItem>
-      </Link>
+      </Link> */}
 
       <Link to="/favorites" className="no-underline">
         <ListItem button onClick={props.toggleDrawer}>
