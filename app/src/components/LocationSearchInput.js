@@ -1,9 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng
 } from 'react-places-autocomplete'
 import { GoogleApiWrapper } from 'google-maps-react'
+import { setCurrentLocation } from '../action-creators/positions'
 
 class LocationSearchInput extends React.Component {
   constructor(props) {
@@ -16,9 +18,13 @@ class LocationSearchInput extends React.Component {
   }
 
   handleSelect = address => {
+    this.setState({ address })
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
-      .then(latLng => console.log('Success', latLng))
+      .then(latLng => {
+        console.log(latLng)
+        this.props.setCurrentLocation(latLng)
+      })
       .catch(error => console.error('Error', error))
   }
 
@@ -68,4 +74,9 @@ class LocationSearchInput extends React.Component {
 
 export default GoogleApiWrapper({
   apiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
-})(LocationSearchInput)
+})(
+  connect(
+    null,
+    { setCurrentLocation }
+  )(LocationSearchInput)
+)

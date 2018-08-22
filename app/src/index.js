@@ -6,6 +6,7 @@ import 'typeface-roboto'
 import store from './store'
 import { Provider } from 'react-redux'
 import { setBreweries } from './action-creators/breweries'
+import { getFavorites } from './action-creators/favorites'
 
 ReactDOM.render(
   <Provider store={store}>
@@ -16,3 +17,4 @@ ReactDOM.render(
 )
 
 store.dispatch(setBreweries)
+store.dispatch(getFavorites)

@@ -8,10 +8,10 @@ import AddToFavoritesButton from './AddToFavoritesButton'
 
 const li = brewery => {
   return (
-    <div>
+    <div key={brewery._id}>
       <ListItem>
-        <AddToFavoritesButton />
-        <Link to="/breweries/:id" className="no-underline">
+        <AddToFavoritesButton brewery={brewery} />
+        <Link to={`/search-results/${brewery._id}`} className="no-underline">
           <ListItemText
             primary={brewery.name}
             secondary={brewery.location.address}
@@ -24,10 +24,14 @@ const li = brewery => {
 }
 const FavoriteBreweriesList = props => (
   <div>
-    <List>{map(li, props.breweries)}</List>
+    {props.favorites.length > 0 ? (
+      <List>{map(li, props.favorites)}</List>
+    ) : (
+      <div>You have not favorited any breweries.</div>
+    )}
   </div>
 )
 const mapStateToProps = state => {
-  return { breweries: state.breweries }
+  return { favorites: state.favorites }
 }
 export default connect(mapStateToProps)(FavoriteBreweriesList)

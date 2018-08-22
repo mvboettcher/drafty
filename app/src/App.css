@@ -1,3 +1,12 @@
+input {
+  outline: none;
+}
+
+.location-search-input {
+  font-size: 14px;
+  margin-left: -3px;
+}
+
 .App {
   text-align: center;
 }
@@ -74,11 +83,22 @@
 .search-go {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   height: 60px;
   width: 268px;
 }
 
+.autocomplete-dropdown-container {
+  width: 268px;
+  position: absolute;
+  padding-top: 50px;
+  text-align: left;
+}
+
+.suggestion-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .go-btn {
   border-radius: 30px;
 }

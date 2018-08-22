@@ -33,21 +33,7 @@ const mapStateToProps = state => {
   return {
     brewery: state.brewery,
     id: state.brewery._id,
-    name: state.brewery.name,
-    address: state.brewery.location.address,
-    sun: state.brewery.hours.sun,
-    mon: state.brewery.hours.mon,
-    tue: state.brewery.hours.tue,
-    wed: state.brewery.hours.wed,
-    thu: state.brewery.hours.thu,
-    fri: state.brewery.hours.fri,
-    sat: state.brewery.hours.sat,
-    latitude: state.brewery.location.latitude,
-    longitude: state.brewery.location.longitude,
-    phone: state.brewery.phone,
-    rating: state.brewery.rating,
-    website: state.brewery.website,
-    image: state.brewery.image
+    favorites: state.favorites
   }
 }
 

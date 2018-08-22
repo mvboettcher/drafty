@@ -4,7 +4,6 @@ import withDrawer from '../components/withDrawer'
 import MenuAppBar from '../components/menuAppBar'
 import BreweryListItems from '../components/BreweryListItems'
 import GoogleMapsContainer from '../components/GoogleMapsContainer'
-import Geolocation from '../lib/findCurrentLocation'
 
 const SearchResults = props => {
   const DisplayMap = props.coords ? (
@@ -15,7 +14,6 @@ const SearchResults = props => {
 
   return (
     <div>
-      <Geolocation />
       <MenuAppBar title="Search Results" />
       <div>{DisplayMap}</div>
       <div style={{ paddingTop: '58vh' }}>

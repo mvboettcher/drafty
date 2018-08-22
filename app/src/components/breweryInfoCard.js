@@ -114,7 +114,7 @@ class BreweryInfoCard extends React.Component {
               >
                 <ExpandMoreIcon />
               </IconButton>
-              <AddToFavoritesButton />
+              <AddToFavoritesButton brewery={brewery} />
             </CardActions>
             <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
               <CardContent>
